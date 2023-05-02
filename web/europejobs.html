@@ -1,0 +1,1258 @@
+
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <title>247Parttimejobs - Find realiable second income here.</title>
+
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+        <link href="../css/animate.css" rel="stylesheet">
+        <link href="./css/style.css" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+    
+        <!-- Mainly scripts -->
+        <script src="/js/jquery-3.1.1.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+        <!-- 1. Add the following script to your page. -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+        <script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+        <script src="./angular/angular-storage.min.js"></script>
+        <script src="./angular/angular-payments.js"></script>
+        <script src="./js/plugins/ng-file-upload/ng-file-upload-shim.js"></script> <!-- for no html5 browsers support -->
+        <script src="./js/plugins/ng-file-upload/ng-file-upload.js"></script>
+        <script src="./angular/app.js"></script>
+        <script src="./angular/service.js"></script>
+        
+        <script src="./angular/index.js"></script>
+        <script src="./angular/europejobs.js"></script>
+
+    
+    </head>
+
+<body ng-app="website" ng-controller="europejobs-ctrl" ng-init="init()">
+
+    <div id="wrapper">
+        <div id="page-wrapper"  >
+            <div class="header">
+                <div class="row" style="background-color: #d7d7d7;height:25px;">
+                    
+                    <div class="col-lg-12"style="float:right !important;margin-left: auto; margin-right: 0;width:auto;">
+                            <div style="float:right;" >
+                            <ul class="nav navbar-top-links navbar-right">
+                               
+                                <span style="padding-right:20px;font-weight:600;"><a href="europejobs.html" >Europe Jobs</a> 
+                                </span>
+                                <span style="padding-right:20px;font-weight:600;"><a href="education.html" >International Education</a> 
+                                </span>
+                               
+                             </ul>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <section>
+                <div >
+                   
+                        <div class="row border-bottom">
+                            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                                <div class="navbar-header">
+                                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
+                                            class="fa fa-bars"></i> </a>
+                                        
+                                </div>
+                                
+            
+                                <ul class="nav navbar-top-links navbar-right p-3">
+                                    <div ng-if="usertype == 1">
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="index.html" style="color:white;">Home</a> 
+                                        </span>
+
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="my-jobs.html" style="color:white;">My Jobs</a> 
+                                        </span>
+
+
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="my-candidates.html" style="color:white;">My Candidates</a> 
+                                        </span>
+
+                                    </div>
+                                    
+                                    
+
+                                    <div ng-if="usertype == 2">
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="index.html" style="color:white;">Home</a> 
+                                        </span>
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="employers.html" style="color:white;">My Applications</a> 
+                                        </span>
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="my-tasks.html" style="color:white;">My Tasks</a> 
+                                        </span>
+                                       
+                                      
+                                     </div>
+                                    <div ng-if="usertype == 0">
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="index.html" style="color:white;">Home</a> 
+                                        </span>
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="employers.html" style="color:white;">Employers</a> 
+                                        </span>
+                                      
+                                         <span style="color:white;padding-right:20px;font-weight:600;"><a href="candidates.html" style="color:white;">Candidates</a></span>
+                                    </div>
+                                    <div ng-if="usertype == 1 || usertype == 2">
+                                        <div class="dropdown profile-element">
+                                            
+                                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                            
+                                                <span style="color:white;"> Hello {{ personaldata.name}}<b class="caret"></b></span>
+                                            </a>
+                                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                                <li><a class="dropdown-item" ng-click="logout()">Logout</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                   
+
+                                   
+                                </ul>
+                                
+                            </nav>
+                        </div>
+
+                        <div class="row" >
+                            <div class="col-lg-4" >
+
+                            </div>
+                            <div class="col-lg-9 center " >
+
+                            </div>
+                            <div class="col-lg-3" >
+                              
+                            </div>
+
+                        </div>
+                    
+                </div>
+                <div class="row wrapper border-bottom white-bg page-heading">
+                    <div class="col-lg-10">
+                        <h3 class="mt-5 md-3" style="font-size:2rem">Europe Jobs </h3>
+                        <ol class="breadcrumb" style="color:#4c566a;">
+                            <li class="breadcrumb-item">
+                                <a href="europejobs.html">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                <strong>Jobs </strong>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                <strong>Visa Application </strong>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                <strong>Application Status </strong>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+             </section>
+
+
+
+        <!-- Category Section -->
+      
+        
+        <section>
+            
+                <div class="header">
+                    <div class="row mt-5 md-5" >
+                        <div class="col-lg-2" >
+
+                        </div>
+                        <div class="col-lg-8" >
+                        <div class="div_top_hypers">
+                         <ul class="ul_top_hypers" >
+                            <li class="space" ><img src="images/poland-flag.png" height="10%" width="10%"></li>
+                            <li class="space" ><img src="images/romania-flag.png" height="10%" width="10%"></li>
+                            <li class="space" ><img src="images/spain-flag.png" height="10%" width="10%"></li>
+                            <li class="space" ><img src="images/germany-flag.png" height="10%" width="10%"></li>
+                            <li class="space" ><img src="images/france-flag.png" height="10%" width="10%"></li>
+                          
+                         </ul>
+                        </div>
+
+                        </div>
+                        <div class="col-lg-2" >
+
+                        </div>
+
+                    </div>
+                </div>
+            
+        </section>
+
+        <section>
+            
+            <div class="header">
+                <div class="row mt-5 md-5" >
+                    <div class="col-lg-2" >
+
+                    </div>
+                    <div class="col-lg-8" >
+                    <div class="div_top_hypers">
+                     <ul class="ul_top_hypers" >
+                        <li class="space"  > <a href="?#fnb" >Food Industry</a></li>
+                        <li class="space" ><a href="?#construction" >Construction Industry</a></li>
+                        <li class="space" ><a href="?#mehanical" >Mehanical Industry</a></li>
+                       
+                      
+                     </ul>
+                    </div>
+
+                    </div>
+                    <div class="col-lg-2" >
+
+                    </div>
+
+                </div>
+            </div>
+        
+    </section>
+        <section id="fnb"> 
+           
+            <div class="wrapper wrapper-content">
+                <div class="row">
+                    <div class="col-lg-12" >
+                        <h3 class="mt-5 md-3" style="font-size:2rem">F&B Jobs </h3>
+                    </div>
+                </div>
+                
+                <div class="row">
+                  
+                            <div class="col-lg-4" >
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                    <div class="ibox" >
+                                        <div class="ibox-title ibox-style2" ng-click="opendetails(data.id)">
+                                         
+                                           <h4 class="center"> <a href="#" >CAPTAINS (SENIOR WAITERS)</a></h4>
+                                            <div class="ibox-tools" >
+                                                  <span style="font-size:1.2rem"><a href="#" >  EU 20-30/hr</a></span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="ibox-list-content" >
+                                           
+                                            <div class="row" >
+                                                <div class="col-md-10">
+                                                    
+                                                    
+                                                    <span style="font-weight: bold">Job Description</span><br>
+                                                     Captain, or senior waiter, has the most interaction with the customers
+                                                     and acts as the ambassador of the restaurant. 
+                                                     Oversees a group of
+                                                      tables and manages a group of service attendants.
+                                                       Job is to  recommend – and if possible, upsell – dishes and take orders. 
+                                                      It is of utmost importance for him to have strong product
+                                                       knowledge of the food and wines served in the restaurant.
+                                                    <br>
+                                                    <br>
+                                                    <span style="font-weight: bold">Total Pay</span>
+                                                    <span> Eur 20 ~30/hr</span><br>
+
+                                                    <span style="font-weight: bold">
+                                                    Royal Manpower </span>
+                                                    <br>
+                                                    Singapore 
+                                                    <br>
+
+                                                    <br>
+                                                        
+                                                    
+                                                </div>
+                                               
+                                                <div class="col-md-2">
+
+                                                    <div >
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate | date: "dd MMM"}} </span>
+                                                        <br>
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate  | date : "HH a"}} </span>
+                                                    </div>
+                                                    <div >
+                                                        <button type="submit" ng-click="apply(data)" id="login-btn"
+                                                        class="btn btn-primary btn-flat m-b-30 m-t-30 mt-2" style="background-color:#ff5c35; color:#FFF">Apply</button>
+                                                    
+                                                    </div>
+                                                    
+                                                
+                                                   
+                                                  
+                                                </div>
+
+                                            </div>
+                            
+                                          
+                                              
+                                            
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4" >
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                    <div class="ibox" >
+                                        <div class="ibox-title ibox-style2" ng-click="opendetails(data.id)">
+                                         
+                                           <h4 class="center"> <a href="#" >COMMIS (LINE COOK)</a></h4>
+                                            <div class="ibox-tools" >
+                                                  <span style="font-size:1.2rem"><a href="#" >  EU 15-18/hr</a></span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="ibox-list-content" >
+                                           
+                                            <div class="row" >
+                                                <div class="col-md-10">
+                                                    
+                                                    
+                                                    <span style="font-weight: bold">Job Description</span><br>
+                                                        <strong>OVERALL OBJECTIVES</strong>
+
+                                                        Set-up the assigned workstation with all the needed ingredients and cooking equipment
+                                                        <br>
+                                                        Prepare all food items as directed in a sanitary and timely manner
+                                                        <br>Follow recipes, and presentation specifications as set by the Executive Chef
+                                                        <br>Restock all items as needed throughout shift
+                                                        <br>Clean and maintain station for food safety, workplace safety & sanitation
+                                                        <br>Requisite daily perishable & dry supplies for the assigned workstation if necessary
+                                                        <br>Understand and practice the proper usage of all equipment in station and responsible for cleanliness & maintenance of them
+                                                        <br>Assist with checking, receiving and storing of goods and maintenance of storage areas
+                                                        <br>Maintain sanitation, health and safety standards in work areas at all given time
+                                                        <br>Attend all briefings and participate in training.
+                                                        <br>Follow food and beverage safety and hygiene policies and procedures.
+                                                        <br>Other ad-hoc duties
+                                                    <br>
+                                                    <br>
+                                                    <span style="font-weight: bold">Total Pay</span>
+                                                    <span> Eur 20 ~30/hr</span><br>
+
+                                                    <span style="font-weight: bold">
+                                                    Royal Manpower </span>
+                                                    <br>
+                                                    Singapore 
+                                                    <br>
+
+                                                    <br>
+                                                        
+                                                    
+                                                </div>
+                                               
+                                                <div class="col-md-2">
+
+                                                    <div >
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate | date: "dd MMM"}} </span>
+                                                        <br>
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate  | date : "HH a"}} </span>
+                                                    </div>
+                                                    <div >
+                                                        <button type="submit" ng-click="apply(data)" id="login-btn"
+                                                        class="btn btn-primary btn-flat m-b-30 m-t-30 mt-2" style="background-color:#ff5c35; color:#FFF">Apply</button>
+                                                    
+                                                    </div>
+                                                    
+                                                
+                                                   
+                                                  
+                                                </div>
+
+                                            </div>
+                            
+                                          
+                                              
+                                            
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4" >
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                    <div class="ibox" >
+                                        <div class="ibox-title ibox-style2" ng-click="opendetails(data.id)">
+                                         
+                                           <h4 class="center"> <a href="#" >Kitchen Helper</a></h4>
+                                            <div class="ibox-tools" >
+                                                  <span style="font-size:1.2rem"><a href="#" >  EU 15-18/hr</a></span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="ibox-list-content" >
+                                           
+                                            <div class="row" >
+                                                <div class="col-md-10">
+                                                    
+                                                    
+                                                    <span style="font-weight: bold">Job Description</span><br>
+                                                        <strong>OVERALL OBJECTIVES</strong>
+
+                                                        
+                                                            <br>You are required to maintain kitchen work areas, kitchen equipment and utensils in clean and orderly condition.
+                                                            <br>You are required to assist in the preparation of food as assigned.
+                                                            <br>You are required to assist in stock taking and storage of stock, including checking deliveries.
+                                                            <br>You are required to assist in ensuring a high level of health and safety, cleanliness and food hygiene and to assure that safe working practices are followed.
+                                                            <br>You are to immediately report any problems to the in Charge or responsible personnel.
+                                                            <br>You are required to carry out any other reasonable duties within the overall function of the job.
+
+                                                    <br>
+                                                    <br>
+                                                    <span style="font-weight: bold">Total Pay</span>
+                                                    <span> Eur 20 ~30/hr</span><br>
+
+                                                    <span style="font-weight: bold">
+                                                    Royal Manpower </span>
+                                                    <br>
+                                                    Singapore 
+                                                    <br>
+
+                                                    <br>
+                                                        
+                                                    
+                                                </div>
+                                               
+                                                <div class="col-md-2">
+
+                                                    <div >
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate | date: "dd MMM"}} </span>
+                                                        <br>
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate  | date : "HH a"}} </span>
+                                                    </div>
+                                                    <div >
+                                                        <button type="submit" ng-click="apply(data)" id="login-btn"
+                                                        class="btn btn-primary btn-flat m-b-30 m-t-30 mt-2" style="background-color:#ff5c35; color:#FFF">Apply</button>
+                                                    
+                                                    </div>
+                                                    
+                                                
+                                                   
+                                                  
+                                                </div>
+
+                                            </div>
+                            
+                                          
+                                              
+                                            
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        
+                    
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+        <section id="construction"> 
+           
+            <div class="wrapper wrapper-content">
+                <div class="row">
+                    <div class="col-lg-12" >
+                        <h3 class="mt-5 md-3" style="font-size:2rem">Construction Jobs </h3>
+                    </div>
+                </div>
+                
+                <div class="row">
+                  
+                            <div class="col-lg-4" >
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                    <div class="ibox" >
+                                        <div class="ibox-title ibox-style2" ng-click="opendetails(data.id)">
+                                         
+                                           <h4 class="center"> <a href="#" >Project Manager Construction</a></h4>
+                                            <div class="ibox-tools" >
+                                                  <span style="font-size:1.2rem"><a href="#" >  EU 20-30/hr</a></span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="ibox-list-content" >
+                                           
+                                            <div class="row" >
+                                                <div class="col-md-10">
+                                                    
+                                                    
+                                                    <span style="font-weight: bold">Job Description</span><br>
+                                                    
+                                <br> Perform project planning, define milestones, coordinate with teams in estimations and taking the deliveries
+                                <br> Have a clear understanding of the requirements and scope of the project and keep a backlog of CR to manage scope creep
+                                <br> Have strong organization and structuring capability to manage the deliveries and project activities
+                                <br> Prepare project estimation and capacity planning
+                                <br> Manage stakeholders including Senior Sponsors, Business Users, etc
+                                <br> Prior experience in managing Finance and regulatory projects with multiple sub-streams.
+                                <br> Strong Finance and regulatory functional knowledge in Management and Accounting, Liquidity management, Credit risk and Local Regulatory Reporting
+                                <br> Mix of implementations like Finance Reportings / Core Banking / Credit Risk
+                                <br>Good knowledge and working capability of product life cycle like loans, deposits, derivatives, Guarantees, securities etc.
+                                <br>Work with the development team, Business analyst, Solution architects , Application SME’s to design the functional solutions
+                                <br>Participate to the full development lifecycle primarily in requirement gathering design, solution design, construction, SIT, UAT, release and implementation support.
+                                <br>Responsible for managing & reporting functional risks.
+                                <br>Perform Budget forecasting, Estimation and Actuals controlling.
+                                <br>Collaborate with the team from multiple divisions to drive the project to completion End to End.
+                                <br>Anticipate and mitigate risks and issues over the whole project
+
+                                                    <br>
+                                                    <br>
+                                                    <span style="font-weight: bold">Total Pay</span>
+                                                    <span> Eur 25 ~30/hr</span><br>
+
+                                                    <span style="font-weight: bold">
+                                                    Royal Manpower </span>
+                                                    <br>
+                                                    Singapore 
+                                                    <br>
+
+                                                    <br>
+                                                        
+                                                    
+                                                </div>
+                                               
+                                                <div class="col-md-2">
+
+                                                    <div >
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate | date: "dd MMM"}} </span>
+                                                        <br>
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate  | date : "HH a"}} </span>
+                                                    </div>
+                                                    <div >
+                                                        <button type="submit" ng-click="apply(data)" id="login-btn"
+                                                        class="btn btn-primary btn-flat m-b-30 m-t-30 mt-2" style="background-color:#ff5c35; color:#FFF">Apply</button>
+                                                    
+                                                    </div>
+                                                    
+                                                
+                                                   
+                                                  
+                                                </div>
+
+                                            </div>
+                            
+                                          
+                                              
+                                            
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4" >
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                    <div class="ibox" >
+                                        <div class="ibox-title ibox-style2" ng-click="opendetails(data.id)">
+                                         
+                                           <h4 class="center"> <a href="#" >Construction Worker</a></h4>
+                                            <div class="ibox-tools" >
+                                                  <span style="font-size:1.2rem"><a href="#" >  EU 15-18/hr</a></span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="ibox-list-content" >
+                                           
+                                            <div class="row" >
+                                                <div class="col-md-10">
+                                                    
+                                                    
+                                                    <span style="font-weight: bold">Job Description</span><br>
+                                                        <strong>OVERALL OBJECTIVES</strong>
+
+                                                       
+    <br>To perform the preventive and corrective maintenance (Electrical)
+    <br>Familiar with tipper truck, excavator, and machinery wiring system.
+    <br>Must be able to repair starter motor, alternator, or others electrical component.
+    <br>Troubleshoot electrical systems on vehicles
+    <br>Perform maintenance on batteries and charging systems
+    <br>Replace and install electrical connectors, relays, fuses, and circuit breakers
+    <br>Install and wire gauges, gauges, and other electrical components
+    <br>Install, replace, and repair wiring and circuits
+    <br>Insulate and wire electrical panels
+    <br>Connect electrical components, such as switches, starter solenoids, and starter solenoids
+    <br>Perform engine and driveline repairs
+    <br>Insulate and wire engine compartment
+
+                                                    <br>
+                                                    <br>
+                                                    <span style="font-weight: bold">Total Pay</span>
+                                                    <span> Eur 20 ~30/hr</span><br>
+
+                                                    <span style="font-weight: bold">
+                                                    Royal Manpower </span>
+                                                    <br>
+                                                    Singapore 
+                                                    <br>
+
+                                                    <br>
+                                                        
+                                                    
+                                                </div>
+                                               
+                                                <div class="col-md-2">
+
+                                                    <div >
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate | date: "dd MMM"}} </span>
+                                                        <br>
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate  | date : "HH a"}} </span>
+                                                    </div>
+                                                    <div >
+                                                        <button type="submit" ng-click="apply(data)" id="login-btn"
+                                                        class="btn btn-primary btn-flat m-b-30 m-t-30 mt-2" style="background-color:#ff5c35; color:#FFF">Apply</button>
+                                                    
+                                                    </div>
+                                                    
+                                                
+                                                   
+                                                  
+                                                </div>
+
+                                            </div>
+                            
+                                          
+                                              
+                                            
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4" >
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                    <div class="ibox" >
+                                        <div class="ibox-title ibox-style2" ng-click="opendetails(data.id)">
+                                         
+                                           <h4 class="center"> <a href="#" >Site Supervisor Cum Driver</a></h4>
+                                            <div class="ibox-tools" >
+                                                  <span style="font-size:1.2rem"><a href="#" >  EU 15-18/hr</a></span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="ibox-list-content" >
+                                           
+                                            <div class="row" >
+                                                <div class="col-md-10">
+                                                    
+                                                    
+                                                    <span style="font-weight: bold">Job Description</span><br>
+                                                        <strong>OVERALL OBJECTIVES</strong>
+
+                                                        
+                                                        Responsibilities:
+                                                        • Report to the Director and management
+                                                        • Supervise, plan and organise site operations on a day-to-day basis and ensure the works are done as per requirements/instructions
+                                                        • Control and coordinate site workers and subcontractors to ensure that work progress smoothly and are completed on schedule.
+                                                        • Experienced in preparing and updating safety documents and reports such as RA (Risk Assessments) etc.
+                                                        • Site and workers supervision
+                                                        • Ensure all sites and workers comply with all the safety standards and rules
+                                                        • Able to command a team of foreign workers to manage a site
+                                                        • Ability to resolve any site or workers’ issues and complaints in an appropriate manner
+                                                        • Plan for site work, worker deployment and material requisition
+                                                        • Update and report to the Director on daily work progresses via whatsapp or any media required and plans for the next...
+                                                    <br>
+                                                    <br>
+                                                    <span style="font-weight: bold">Total Pay</span>
+                                                    <span> Eur 20 ~30/hr</span><br>
+
+                                                    <span style="font-weight: bold">
+                                                    Royal Manpower </span>
+                                                    <br>
+                                                    Singapore 
+                                                    <br>
+
+                                                    <br>
+                                                        
+                                                    
+                                                </div>
+                                               
+                                                <div class="col-md-2">
+
+                                                    <div >
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate | date: "dd MMM"}} </span>
+                                                        <br>
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate  | date : "HH a"}} </span>
+                                                    </div>
+                                                    <div >
+                                                        <button type="submit" ng-click="apply(data)" id="login-btn"
+                                                        class="btn btn-primary btn-flat m-b-30 m-t-30 mt-2" style="background-color:#ff5c35; color:#FFF">Apply</button>
+                                                    
+                                                    </div>
+                                                    
+                                                
+                                                   
+                                                  
+                                                </div>
+
+                                            </div>
+                            
+                                          
+                                              
+                                            
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        
+                    
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+        <section id="mehanical"> 
+           
+            <div class="wrapper wrapper-content">
+                <div class="row">
+                    <div class="col-lg-12" >
+                        <h3 class="mt-5 md-3" style="font-size:2rem">Mehanical & Automobile Industry Jobs </h3>
+                    </div>
+                </div>
+                
+                <div class="row">
+                  
+                            <div class="col-lg-4" >
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                    <div class="ibox" >
+                                        <div class="ibox-title ibox-style2" ng-click="opendetails(data.id)">
+                                         
+                                           <h4 class="center"> <a href="#" >Workshop Manager </a></h4>
+                                            <div class="ibox-tools" >
+                                                  <span style="font-size:1.2rem"><a href="#" >  EU 20-30/hr</a></span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="ibox-list-content" >
+                                           
+                                            <div class="row" >
+                                                <div class="col-md-10">
+                                                    
+                                                    
+                                                    <span style="font-weight: bold">Job Description</span><br>
+                                                    
+                                                    The Workshop Manager Role
+
+                                                <br>Oversee operations of entire workshop to ensure smooth operation of workshop, efficient customer service, and high quality of service
+                                                <br>Manage incoming customer inquiries through various communication channels (emails, phone calls, etc.), responding efficiently to customer inquiries and providing accurate and complete information
+                                                <br>Monitor workshop supplies and parts to ensure workshop has sufficient supplies to efficiently and effectively provide needed services, ordering or sourcing for new supplies and parts whenever necessary
+                                                <br>Manage workshop staff, including coordinating duties required by each staff member
+                                                <br>Maintain accurate service documentations through daily and monthly administrative duties, such as preparing sales accounting statements, budgets, and other direct administrative activity directly related to services provided by the workshop
+                                                                                                
+
+                                                    <br>
+                                                    <br>
+                                                    <span style="font-weight: bold">Total Pay</span>
+                                                    <span> Eur 25 ~30/hr</span><br>
+
+                                                    <span style="font-weight: bold">
+                                                    Royal Manpower </span>
+                                                    <br>
+                                                    Singapore 
+                                                    <br>
+
+                                                    <br>
+                                                        
+                                                    
+                                                </div>
+                                               
+                                                <div class="col-md-2">
+
+                                                    <div >
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate | date: "dd MMM"}} </span>
+                                                        <br>
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate  | date : "HH a"}} </span>
+                                                    </div>
+                                                    <div >
+                                                        <button type="submit" ng-click="apply(data)" id="login-btn"
+                                                        class="btn btn-primary btn-flat m-b-30 m-t-30 mt-2" style="background-color:#ff5c35; color:#FFF">Apply</button>
+                                                    
+                                                    </div>
+                                                    
+                                                
+                                                   
+                                                  
+                                                </div>
+
+                                            </div>
+                            
+                                          
+                                              
+                                            
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4" >
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                    <div class="ibox" >
+                                        <div class="ibox-title ibox-style2" ng-click="opendetails(data.id)">
+                                         
+                                           <h4 class="center"> <a href="#" >Welder</a></h4>
+                                            <div class="ibox-tools" >
+                                                  <span style="font-size:1.2rem"><a href="#" >  EU 15-18/hr</a></span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="ibox-list-content" >
+                                           
+                                            <div class="row" >
+                                                <div class="col-md-10">
+                                                    
+                                                    
+                                                    <span style="font-weight: bold">Job Description</span><br>
+                                                        <strong>OVERALL OBJECTIVES</strong>
+
+                                                       
+                                                        Description
+
+
+                                                    <br>Fabricating and assembling metal products, according to drawing specification
+
+                                                    <br>Handle technical problems related to welding
+
+                                                    <br>Experience in sheet metal fabrication
+
+                                                    <br>
+                                                    <br>
+                                                    <span style="font-weight: bold">Total Pay</span>
+                                                    <span> Eur 20 ~30/hr</span><br>
+
+                                                    <span style="font-weight: bold">
+                                                    Royal Manpower </span>
+                                                    <br>
+                                                    Singapore 
+                                                    <br>
+
+                                                    <br>
+                                                        
+                                                    
+                                                </div>
+                                               
+                                                <div class="col-md-2">
+
+                                                    <div >
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate | date: "dd MMM"}} </span>
+                                                        <br>
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate  | date : "HH a"}} </span>
+                                                    </div>
+                                                    <div >
+                                                        <button type="submit" ng-click="apply(data)" id="login-btn"
+                                                        class="btn btn-primary btn-flat m-b-30 m-t-30 mt-2" style="background-color:#ff5c35; color:#FFF">Apply</button>
+                                                    
+                                                    </div>
+                                                    
+                                                
+                                                   
+                                                  
+                                                </div>
+
+                                            </div>
+                            
+                                          
+                                              
+                                            
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4" >
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                    <div class="ibox" >
+                                        <div class="ibox-title ibox-style2" ng-click="opendetails(data.id)">
+                                         
+                                           <h4 class="center"> <a href="#" >Site Supervisor Cum Driver</a></h4>
+                                            <div class="ibox-tools" >
+                                                  <span style="font-size:1.2rem"><a href="#" >  EU 15-18/hr</a></span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="ibox-list-content" >
+                                           
+                                            <div class="row" >
+                                                <div class="col-md-10">
+                                                    
+                                                    
+                                                    <span style="font-weight: bold">Job Description</span><br>
+                                                        <strong>OVERALL OBJECTIVES</strong>
+
+                                                        Job Description:
+
+                                                        <br>Assist mechanic to perform maintenance and repair on light/heavy vehicles
+                                                        <br>Perform basic auto care and maintenance tasks
+                                                        <br>Perform routine maintenance and general mechanic work light/heavy vehicles
+                                                        <br>Willingness to learn with hands-on training
+                                                        <br>Upkeep repair floor clean and organized
+
+                                                       
+                                                        <br>
+                                                    <br>
+                                                    <span style="font-weight: bold">Total Pay</span>
+                                                    <span> Eur 20 ~30/hr</span><br>
+
+                                                    <span style="font-weight: bold">
+                                                    Royal Manpower </span>
+                                                    <br>
+                                                    Singapore 
+                                                    <br>
+
+                                                    <br>
+                                                        
+                                                    
+                                                </div>
+                                               
+                                                <div class="col-md-2">
+
+                                                    <div >
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate | date: "dd MMM"}} </span>
+                                                        <br>
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate  | date : "HH a"}} </span>
+                                                    </div>
+                                                    <div >
+                                                        <button type="submit" ng-click="apply(data)" id="login-btn"
+                                                        class="btn btn-primary btn-flat m-b-30 m-t-30 mt-2" style="background-color:#ff5c35; color:#FFF">Apply</button>
+                                                    
+                                                    </div>
+                                                    
+                                                
+                                                   
+                                                  
+                                                </div>
+
+                                            </div>
+                            
+                                          
+                                              
+                                            
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        
+                    
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+        </div>
+
+    </div>
+    <div class="footer.fixed" style="background-color: #D0D0D0;height: 23px;">
+
+    </div>
+
+       
+
+    
+   
+
+
+    <script src="../js/plugins/pace/pace.min.js"></script>
+    <div id="pagecounter"></div>
+
+
+<!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="apply" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+                    <h4 class="modal-title">247 Partimejobs</h4>
+
+                </div>
+                <div class="modal-body">
+                   
+                    <!--modal form section starts-->
+                    <form name="applicationForm">
+                    <div class="form">
+                        <h3>{{ data.id }}-{{data.jobtitle}}</h3>
+                     
+                        <span> <strong>Apply Now</strong></span>
+                        <div class="row ">
+
+                            <div class="col-6 ">
+                                <label class="form-label ">Name </label>
+                                <input type="text " tabindex="1"  class="form-control " ng-model="application.name" value="">
+                            </div>
+
+                            <div class="col-6 ">
+                                <label class="form-label ">Price/Hr  </label>
+                                <input type="text "  tabindex="2" class="form-control " ng-model="application.jobhourlypay"   value=""  >
+                            </div>
+
+                            <div class="col-12 ">
+                                <label class="form-label ">Introduction /Cover Letter </label>
+                              
+                                <textarea  name="info" class="form-control"  tabindex="3"  ng-model="application.intro" 
+                                        value="data.jobdescription"  rows="4" cols="50">
+                                       
+                                </textarea>
+
+                                <span class="error" ng-show="validateintro==1">{{ message }}</span>
+                          
+                            </div>
+
+                          
+                           
+                            <div class="col-12 ">
+                                 <br>
+                                <label class="form-label "><strong>Confirm Timing </strong> </label>
+                            </div>
+
+                            <div class="col-6 ">
+                                <label class="form-label ">Datetime  </label>
+                                <input type="text" class="form-control " value="{{ data.jobdate | date: 'dd MMM HH a'}}" readonly>
+                            </div>
+
+                            <div class="col-6 ">
+
+                                <label class="form-label ">No of Hours.  </label>
+                                <input type="text" class="form-control "  value="{{ data.jobnoofhours}}" readonly>
+                            </div>
+
+                            <div class="col-md-1" >
+                                <div class="form-group" style="padding-top:10px;">
+                                    <input type="checkbox"  name="password1"  ng-model="application.agreeterms" tabindex="4" required>
+                                    <span class="error pl-1" ng-show="!applicationForm.useragreement.$valid && (applicationForm.useragreement.$touched)"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-11">
+
+                                    <label class="form-label p-1 mt-1" for="form3Example3">You agree to be present for the job. A no-attendance fee would
+                                        be deducted from your balance if you do not arrive.
+                                        <strong><a href="user_agreement.html" target="_blank" >User Agreement.</a></strong></label>
+
+                                </div>
+
+
+
+
+                            <div class="col-6 ">
+                                <p>
+
+                                </p>
+                                <button type="submit"  tabindex="5"  ng-click="addapplication(application)"
+                                class="btn btn-primary block full-width m-b">Submit</button>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+     <!-- modal starts-->
+     <div class="modal inmodal" id="iscandidate" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+                    <h4 class="modal-title">247 Partimejobs</h4>
+
+                </div>
+                <div class="modal-body">
+                   <span> Please login as a candidate to proceed with the application.</span>
+                   <button type="submit" ng-click="logout()" id="login-btn"
+                   class="btn btn-primary btn-flat m-b-30 m-t-30 mt-2" style="background-color:#ff5c35; color:#FFF">Logout</button>
+
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- modal starts-->
+    <div class="modal inmodal" id="success" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+                    <h4 class="modal-title">247 Partimejobs</h4>
+
+                </div>
+                <div class="modal-body">
+                   <span> Your Application is successfully submitted. </span>
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+      <!-- modal starts-->
+      <div class="modal inmodal" id="login" tabindex="-1" role="dialog" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+                    <h4 class="modal-title">247 Partimejobs</h4>
+
+                </div>
+                <div class="modal-body">
+                 
+                  
+                   <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox" >
+                            <div class="ibox-title ibox-style2">
+                             
+                               <h4 class="left" >Candidate Login</h4>
+
+                            </div>
+                            <div class="ibox-content" >
+                                <div class="row ">
+
+
+
+                <div class="col-12 ">
+                    <label class="form-label ">Email </label>
+                    <input type="text " class="form-control " ng-model="loginform.email" placeholder="Email ">
+                </div>
+
+                <div class="col-12 ">
+                    <label class="form-label ">Password </label>
+                    <input type="text " class="form-control " ng-model="loginform.password" placeholder="Password ">
+                </div>
+
+
+
+                 <div class="col-md-1" >
+                       <div class="form-group" style="padding-top:10px;">
+
+                         <input type="checkbox"  name="password1"  ng-model="loginform.rememberpassword" tabindex="5" >
+                          
+                         <div class="help-block with-errors"></div>
+                       </div>
+                 </div>
+                <div class="col-md-8">
+
+                         <label class="form-label p-1 mt-1" for="form3Example3">Remember Login/Password.
+                             </label>
+
+                 </div>
+
+
+
+
+                <div class="col-6 "  >
+                    <p>
+
+                    </p>
+                    <button type="submit" ng-click="login(loginform)"
+                    class="btn btn-primary block full-width m-b">Submit</button>
+
+                </div>
+
+
+            </div>
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+
+
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.9.4/ecommerce_products_grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jun 2022 03:36:24 GMT -->
+
+</html>

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+    <title>247Parttimejobs - Find realiable second income here.</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="../stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b978cbdbfe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <!-- 1. Add the following script to your page. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+    <script src="../angular/angular-storage.min.js"></script>
+    <script src="../angular/angular-payments.js"></script>
+    <script src="./angular/app.js"></script>
+    <script src="./angular/service.js"></script>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b978cbdbfe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/custom.css">
+
+
+    <script src="./angular/demo-robots.js"></script>
+
+</head>
+
+<body ng-app="website" ng-controller="demo-robots-ctrl" ng-init="init()">
+
+    <div id="wrapper">
+
+        <div id="menu"></div>
+
+        <div id="page-wrapper">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
+                                class="fa fa-bars"></i> </a>
+                                <ul class="nav navbar-top-links navbar-left p-3" >
+                                    <span ><a style="text-decoration:none;cursor:hand;color: coral;font-weight:800;" href="/intro/dashboard.html">HOME</a></span>
+                                
+                                </ul>
+                    </div>
+                   
+                    <ul class="nav navbar-top-links navbar-right p-3">
+                     
+                        <span style="color:white;padding-right:20px;font-weight:600;" >Real Balance {{livebalance}}</span>
+                        <span style="color:white;padding-right:20px;font-weight:600;" >Demo Balance {{demobalance}}</span>
+                        <div class="dropdown profile-element">
+
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                               
+                                <span class="text-muted text-xs block" style="color:white !important;font-weight:600;" >{{name}} <b class="caret"></b></span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                <li><a class="dropdown-item" ng-click="logout()">Logout</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>Robotic Portfolio</h2>
+                </div>
+            </div>
+
+
+
+            <div class="wrapper wrapper-content">
+
+            </div>
+            <div class="row mb-4" id="intro1">
+                <div class="col-lg-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="signals.html"><strong>Portfolios </strong></a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row" id="intro">
+                <div class="col-lg-11">
+                    <div class="ibox ">
+                        <div class="ibox-title">
+                            <h1 style="color:#8B8B81"><strong>Automatic Investment Portfolios </strong></h1>
+
+                            <div class="ibox-tools">
+                                  
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            Our team has been working on algorithms and artificial intelligence since 2016. After about 6 years , we are ready to launch our first automatic system which isable to trade in any stock markets. A complete team of fundamental researchers, technical traders, programmers and daily users have contributed in the development of our software and we are proud about there contributions and hope to see this project becoming the first financial unicorn which empowers people to generate auto-income.. 
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="col-lg-11">
+                    <div class="row">
+                        <div class="col-lg-6" ng-repeat="data in dataset">
+                            <div class="ibox ">
+                                <div class="ibox-title" style="background-color: #e5e5e5;">
+        
+                                  
+                                    <div class="row" >
+                                        <div class="col-lg-6">
+                                            <h2 style="color: #708090;"><strong><a href="demo-robot-detail.html?modelportfolioId={{data.id}}" >{{data.portfolio_name}}</a></strong></h2>
+                                          
+                                        </div>
+
+                                       
+                                    </div>
+                                   
+                                    <div class="ibox-tools">
+                                        <span style="padding-top: 30px;"><strong >Monthly ROI</strong></span>
+                                       
+                                       
+                                        <button type="button" style="height:30px !important;width:40px !important;font-weight:bold" class="btn btn-primary">{{data.roi}}%</button>
+                                   
+                                    </div>
+                                       
+                                           
+                                      
+                                       
+                                    
+                                    
+                                   
+                                </div>
+                                <div class="ibox-content" >
+                                    <strong>{{data.portfolio_name}} Portfolio</strong>
+                                    
+                                    <br>
+                                       Based on fundamental research, we have selected the top performing assets from the basket of US ETF for trading.
+                                        
+                                    
+                                    <p></p>
+                                    <p><strong>Features: </strong></p>
+                                    <ul class="">
+                                      
+                                      
+                                        <li>{{data.info}}</li>
+                                        <li>{{data.briefintro}}</li>
+                                    </ul>
+                                    <p><strong>Start Date </strong> 1 AUG 2022</p>
+                                    <p><strong>Fund Manager : </strong></p>
+                                    <ul>
+                                       
+                                        <li>Iamstockbot Team.</li>
+                                      
+                                       
+                                        
+                                    </ul>
+                                    <div>
+                                            <a href="demo-robot-detail.html?modelportfolioId={{data.id}}" class="btn btn-w-m btn-primary mt-3"><strong>Portfolio Breakdown</strong></a> 
+                                      
+                                         
+        
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+                </div>
+
+
+
+
+                </div>
+            </div>
+            <div class="row" id="intro">
+                <div class="col-lg-11">
+                   
+                </div>
+            </div>
+
+            <div class="row" id="categorylist">
+                
+            </div>
+
+
+            <div class="row ng-hide" id="loader">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-4">
+                    <img src="/img/loader.gif" height="150px">
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="container ">
+                <div class="row" id="createportfolio" >
+                
+                    <div class="col-lg-11">
+                        <div class="ibox ">
+                            <div>
+                                <div class="row ibox-title">
+                                    <div class="col-lg-11">
+                                        <h2><strong>Subscribe to {{portfolio_name}} Robot</strong></h2>
+                                    </div>
+                                </div>
+                                <form name="myForm">
+                                <div class="row ibox-content">  
+                                    <div class="col-lg-4">
+                                                <div class="row">
+                                                    <div>
+                                                        <h5><strong>1. Customer Information</strong></h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                   
+                                                    <div class="form-group">
+                                                        <label for="stockpercentage">Customer Details </label>
+                                                        <input type="text" class="form-control" ng-model="createportfolio.name"
+                                                            name="name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="stockpercentage">Phone </label>
+                                                        <input type="text" class="form-control" ng-model="createportfolio.phone_number"
+                                                            name="phone">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="stockpercentage">Email </label>
+                                                        <input type="text" class="form-control" ng-model="createportfolio.email"
+                                                            name="email">
+                                                    </div>
+                                                    <div style="height:28px;"></div>
+                                                </div>
+                                            
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="row">
+                                            <div>
+                                                <h5><strong>2. Portfolio Information</strong></h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label for="stockpercentage">Portfolio </label>
+                                                <input type="text" class="form-control"
+                                                    ng-model="createportfolio.portfolio_name" name="portfolio_name">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="stockpercentage">Portfolio Capital :</label>
+                                                <input type="text"  class="form-control"
+                                                    ng-model="createportfolio.portfolio_capital" name="percentage" required>
+                                            </div>
+                                            <div class="form-group col-md-8">
+                                                <label for="duration">Broker</label>
+                                                <select class="custom-select " ng-model="createportfolio.broker"
+                                                    name="duration" >
+                                                    <option value="Alpaca" selected> Alpaca</option>
+                                                    <option value="IG"> IG</option>
+                                                    <option value="IG"> 2usd.co</option>
+                                                </select>
+                                            </div>
+                                            
+                                            
+                                            
+                                            <div style="height:28px;"></div>
+                                        </div>
+                                    
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <div class="row">
+                                            <div>
+                                                <h5><strong>3. Alert Information</strong></h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="height:10px;"></div>
+                                            <div class="col-md-5 form-group">
+                                            
+                                                <input type="checkbox" ng-model="createportfolio.email_alert"
+                                                    name="emailalert" >
+                                                <label for="stockpercentage">
+                                                Email Alert 
+                                                
+                                                </label>
+                                            </div>
+                                            <div class="col-md-5 form-group">
+                                                <input type="checkbox" ng-model="createportfolio.phone_alert"
+                                                    name="phonealert" >
+                                                <label for="stockpercentage">
+                                                    Phone Alert
+                                                </label>
+                                            </div>
+                                          
+
+                                            <div class="form-group col-md-8">
+                                                <label for="duration">Duration </label>
+                                                <select class="custom-select " ng-model="createportfolio.duration"
+                                                    name="duration" >
+                                                    <option value="7" selected> 7 Days Free</option>
+                                                    <option value="30"> Monthly</option>
+                                                    <option value="365"> Year </option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-12 form-group">
+                                                <input type="checkbox" ng-model="createportfolio.accept_terms"
+                                                    name="accept_terms" >
+                                                <label for="accept_terms">
+                                                We understand that the trade signals are based on technical analysis and we should do our own due diligance before taking a trade.
+                                                </label>
+                                            </div>
+                                            <div class="form-group">
+                                            
+                                                <input type="hidden" class="form-control" ng-model="createportfolio.promocode"
+                                                    name="promocode">
+                    
+                    
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-5">
+
+                                                    <button type="submit" ng-click="submitcreateform(createportfolio)"
+                                                        class="btn btn-primary block full-width m-b">Submit</button>
+                                                    </div>
+                                                    <div class="col-md-5"> 
+                                                    <button type="button" ng-click="init()"
+                                                        class="btn btn-success block full-width m-b">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+
+                                        
+                                        </div>
+                                    </div>
+                    
+                                    
+                    
+                                    
+                    
+                    
+                                </form>
+                                </div>
+                    
+                    
+                            </div>
+                    
+                    
+                    
+                    
+                        </div>
+                    
+                    </div>
+                    
+                
+                </div>
+            </div>
+
+            
+
+
+        </div>
+    </div>
+    <!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="addstock" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="/img/iamstockbot.png" class="ml-3">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h3> Add Stock</h3>
+                        <p> Please select the stock for your portfolio.</p>
+                        <form name="myForm">
+                            <div class="form-group">
+                                <label for="stockname">Stock Name:</label>
+
+                                <select class="custom-select" ng-model="addstock.symbol" required name="stockname">
+                                    <option value="" disabled></option>
+                                    <option ng-repeat="stock in stockdata_list" value="{{stock.stock}}">
+                                        {{stock.stock}}</option>
+
+                                </select>
+
+
+                            </div>
+                            <div class="form-group">
+                                <label for="stockpercentage">Percentage Allocation:</label>
+                                <input type="number" min="0" max="100" class="form-control"
+                                    ng-model="addstock.percentage" name="percentage" required>
+                            </div>
+                            <button type="submit" ng-click="addnewstock(customerId,portfolioId ,addstock)"
+                                class="btn btn-primary block full-width m-b">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for the reset portfolio -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="resetportfolio" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="/img/iamstockbot.png" class="ml-3">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h3> Reset Portfolio</h3>
+                        <p> This will reset your portfolio with the new cash value in account.</p>
+                        <form name="myForm">
+
+                            <button type="submit" ng-click="resetportfolio(customerId, '1')"
+                                class="btn btn-primary block full-width m-b">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for the reset portfolio -->
+
+    <!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="editstock" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="img/iamstockbot_a.png" style="width:120px; height:80px;">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h3> Edit Stock</h3>
+                        <p> You may edit the percentage setting for your stock. </p>
+                        <form name="myForm">
+                            <div class="form-group">
+                                <label for="stockname">Stock Name:</label>
+
+                                <input type="text" class="form-control" ng-model="data.symbol" name="stockname"
+                                    value="{{data.symbol}} " required>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="stockpercentage">Percentage Allocation:</label>
+                                <input type="text" class="form-control" ng-model="data.percentage" name="percentage"
+                                    value="{{data.percentage }}" required>
+                            </div>
+                            <button type="submit" ng-click="editstock(customerId, '1',data)"
+                                class="btn btn-primary block full-width m-b">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="deletestock" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="Iamstockbot-Logo.png" style="width:120px; height:80px;">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h3> Edit Stock</h3>
+                        <p> You may edit the percentage setting for your stock. </p>
+                        <form name="myForm">
+                            <div class="form-group">
+                                <label for="stockname">Stock Name:</label>
+
+                                <input type="text" class="form-control" ng-model="data.symbol" name="stockname"
+                                    value="{{data.symbol}} " readonly>
+
+                            </div>
+
+                            <button type="submit" ng-click="deletestock(customerId, '1',data)"
+                                class="btn btn-primary btn-w-m block full-width m-b">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="alert" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="/img/iamstockbot.png" style="width:120px; height:80px;">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h3> Alert</h3>
+                        <p>Please reset your existing portfolio before creating a new one. </p>
+
+                    </div>
+                    <form name="myForm">
+
+                        <button type="button" class="btn btn-primary block btn-w-m" data-dismiss="modal">Close</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="success" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="/img/iamstockbot.png" style="width:120px; ">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h5>{{msg}}</h5>
+
+                    </div>
+
+
+                    <button type="button" class="btn btn-primary block btn-w-m" data-dismiss="modal"
+                        ng-click="myportfolio()">Close</button>
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="issue" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="/img/iamstockbot.png" style="width:120px; height:80px;">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h3> Alert</h3>
+                        <p>{{error-msg}} </p>
+
+                    </div>
+                    <form name="myForm">
+
+                        <button type="button" class="btn btn-primary block btn-w-m" data-dismiss="modal">Close</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Mainly scripts -->
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="../js/inspinia.js"></script>
+    <!-- <script src="js/plugins/pace/pace.min.js"></script> -->
+
+</body>
+
+
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.9.4/ecommerce_products_grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jun 2022 03:36:24 GMT -->
+
+</html>

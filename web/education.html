@@ -73,8 +73,7 @@
                                 
             
                                 <ul class="nav navbar-top-links navbar-right p-3">
-                                    {{islogin}}
-                                    <div ng-if="islogin == 1">
+                                    <div ng-if="usertype == 1">
                                         <span style="color:white;padding-right:20px;font-weight:600;"><a href="index.html" style="color:white;">Home</a> 
                                         </span>
 
@@ -89,8 +88,17 @@
                                     
                                     
 
-                                    
-                                    <div ng-if="islogin == 0">
+                                    <div ng-if="usertype == 2">
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="index.html" style="color:white;">Home</a> 
+                                        </span>
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="employers.html" style="color:white;">My Applications</a> 
+                                        </span>
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="my-tasks.html" style="color:white;">My Tasks</a> 
+                                        </span>
+                                       
+                                      
+                                     </div>
+                                    <div ng-if="usertype == 0">
                                         <span style="color:white;padding-right:20px;font-weight:600;"><a href="index.html" style="color:white;">Home</a> 
                                         </span>
                                         <span style="color:white;padding-right:20px;font-weight:600;"><a href="employers.html" style="color:white;">Employers</a> 
@@ -98,7 +106,7 @@
                                       
                                          <span style="color:white;padding-right:20px;font-weight:600;"><a href="candidates.html" style="color:white;">Candidates</a></span>
                                     </div>
-                                    <div ng-if="islogin == 1">
+                                    <div ng-if="usertype == 1 || usertype == 2">
                                         <div class="dropdown profile-element">
                                             
                                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -137,7 +145,7 @@
                     
                         <div class="row" >
                             <div class="col-lg-4" >
-                                    <h1> 24x7 Parttimejobs</h1>
+                                    <h1> Europe Jobs</h1>
                             </div>
                             <div class="col-lg-9 center " >
 

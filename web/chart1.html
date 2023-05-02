@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.9.4/ecommerce_products_grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jun 2022 03:36:24 GMT -->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>247Parttimejobs - Find realiable second income here.</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+ 
+    <title>247Parttimejobs - Find realiable second income here.</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="../stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b978cbdbfe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <!-- 1. Add the following script to your page. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+    <script src="../angular/angular-storage.min.js"></script>
+    <script src="../angular/angular-payments.js"></script>
+    <script src="./angular/app.js"></script>
+    <script src="./angular/service.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b978cbdbfe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/drag-panes.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/accessibility.js"></script>
+    
+    <style>
+        #container {
+            height: 700px;
+            min-width: 310px;
+        }
+    </style>
+
+<script src="./angular/chart.js"></script>
+
+</head>
+
+<body ng-app="website" ng-controller="chart-ctrl" ng-init="init()" >
+
+    <div id="wrapper">
+
+        <div id="menu"></div>
+
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
+                                class="fa fa-bars"></i> </a>
+
+                    </div>
+
+                    <ul class="nav navbar-top-links navbar-right p-3">
+                        <div class="dropdown profile-element">
+
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+                                <span class="text-muted text-xs block">{{name}} <b class="caret"></b></span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                <li><a class="dropdown-item" ng-click="logout()">Logout</a></li>
+                            </ul>
+                        </div>
+                </nav>
+            </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-6">
+                    <h2>{{stats['Stock']}}</h2>
+
+                    
+
+
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index-2.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <strong>Chart</strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2 mt-2 ">
+                    <a href="#" ng-click="backtest(myportfolioId)" class="btn btn-primary">Backtest
+                        </a></div>
+            </div>
+
+            <div class="wrapper wrapper-content animated fadeInRight">
+               
+                <div  class="row" >
+                    <div class="col-lg-12">
+                        <div class="ibox ">
+                           
+                            
+                            <div class="ibox-content">
+                                <div class="row">
+                                    <h2> Stats </h2>
+                                    <div class="col-md-3">
+                                        <h5>Start Price :{{stats['Initial_Price']}}</h5>
+                                        <h5>Last Price :{{stats['Final_Price']}}</h5> 
+                                        <h5>Starttime :{{stats['Start']}}</h5>
+                                        <h5>Endtime : {{stats['End']}}</h5>
+                                        <h5>Duration : {{stats['Duration']}}</h5>
+                                    </div>
+                                    <div class="col-md-3">
+                                       
+                                        <h5>Buy_Hold_Return_Value :<b>{{stats['Buy_Hold_Return_Value']}}</b></h5>
+                                        <h5>Buy_Hold_Return_Percentage : {{stats['Buy_Hold_Return_Percentage']}}</h5>
+                                        <h5>Strategy_Return_Value : {{stats['Strategy_Return_Value']}} </h5>
+                                        <h5> Strategy_Return_Percentage : {{stats['Strategy_Return_Percentage']}}</h5>
+                                   </div>
+                                   <div class="col-md-3">
+                                    <h5>Total_Trades :{{stats['Total_Trades']}}</h5>
+                                    <h5>Winning_trades :{{stats['Winning_trades']}}</h5>
+                                    <h5>Loosing_Trades : {{stats['Loosing_Trades']}}</h5>
+                                    <h5>Win_Rate : {{stats['Win_Rate']}} </h5>
+                                    <h5> Best_Trade : {{stats['Best_Trade']}}</h5>
+                                    <h5> Worst_Trade : {{stats['Worst_Trade']}}</h5>
+                                    <h5> Avg_Trade : {{stats['Avg_Trade']}}</h5>
+                               </div>
+    
+        
+            
+                                </div>
+                                
+                            </div>
+                            
+                            
+                          
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="wrapper wrapper-content animated fadeInRight">
+
+                    <div  class="row" >
+                        <div class="col-lg-12">
+                            <div class="ibox ">
+                                <div class="ibox-title">
+                                    Stock Chart
+                                </div>
+                                
+                                
+                                
+                                <div class="ibox-content">
+                                    <div id="container"></div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ibox ">
+                               
+                                <div class="ibox-title">
+                                    Latest Signals
+                                </div>
+                                <div class="ibox-content">
+    
+                                    <div class="table-responsive mt-3">
+                                        <table class="table table-striped table-bordered table-hover dataTables-example">
+                                            <thead>
+                                                <tr>
+                                                    <th>Sr. Number</th>
+                                                    <th>Stock Name</th>
+                                                    <th>Date</th>
+                                                    <th>signals</th>
+                                                    <th>price</th>
+                                                    <th>Profitloss</th>
+                                                    <th>Duration</th>
+                                                    <th>Notes</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="data in signaldata">
+                                                    <td>{{data.id}}</td>
+                                                    <td><a href="chart.html?stock={{data.stock}}">{{data.stock}}</a></td>
+                                                    <td>{{data.signaldate | date:"medium" }}</td>
+                                                    <td>{{data.signals}}</td>
+                                                    <td>{{data.price | number: 2}}</td>
+                                                    <td>
+                                                     {{data.profitloss | number: 2}}
+                                                    </td>
+                                                    <td>{{data.duration}}</td>
+                                                    <td>{{data.notes}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div  class="row" >
+                        <div class="col-lg-12">
+                            <div class="ibox ">
+                                <div class="ibox-title">
+                                    Transactions
+                                </div>
+                                
+                                
+                                
+                                <div class="ibox-content">
+    
+                                    <div class="table-responsive mt-3">
+                                        <table class="table table-striped table-bordered table-hover dataTables-example">
+                                            <thead>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>Start_datetime</th>
+                                                    <th>Stop_datetime</th>
+                                                    <th>duration</th>
+                                                    <th>Direction</th>
+                                                    <th>Buy</th>
+                                                    <th>Buy close</th>
+                                                    <th>Sell</th>
+                                                    <th>Sell close</th>
+                                                    <th>Profit_loss</th>
+                                                    <th>Percentage_profit</th>
+                                                    <th>Total_profit</th>
+    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="datax in dataset2 | orderBy:reverse:true">
+                                                    <td>{{datax.id}}</td>
+                                                    <td>{{datax.start_datetime | date:"medium"}}</td>
+                                                    <td>{{datax.stop_datetime | date:"medium"}}</td>
+                                                    <td>{{datax.duration  | date:"medium" }}</td>
+                                                    <td>{{datax.direction  | date:"medium" }}</td>
+                                                    <td>{{datax.buy}}</td>
+                                                    <td>{{datax.buyclose}}</td>
+                                                    <td>{{datax.sell}}</td>
+                                                    <td>{{datax.sellclose}}</td>
+                                                    <td>{{datax.profit_loss}}</td>
+                                                     <td>{{datax.percentage_profit}}</td>
+                                                    <td>{{datax.total_profit}}</td>
+    
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+                <div  class="row" >
+                    <div class="col-lg-12">
+                        <div class="ibox ">
+                           
+                            <div class="ibox-content">
+                                <h3> Trades</h3>
+                                <div class="row">
+
+                                    <div style="width:90%;height:500px;float:left;border:1px solid lightgrey;" class="ml-3 p-3 mb-2" >
+        
+                                        <!-- <canvas class="chart chart-line" chart-data="graphdata" chart-labels="labels"
+                                             chart-dataset-override="datasetOverride" ></canvas> -->
+
+                                         <canvas id="bar" class="chart chart-bar"
+                                             chart-data="graphdatax" chart-labels="labelsx" chart-series="series" ></canvas>
+                                    
+                                    </div>
+        
+            
+                                    </div>
+                                
+                            </div>
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+                
+
+                
+                
+                
+                
+
+                
+            </div>
+        </div>
+
+
+
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+          <!-- Mainly scripts -->
+          <script src="/js/jquery-3.1.1.min.js"></script>
+          <script src="/js/popper.min.js"></script>
+          <script src="/js/bootstrap.js"></script>
+          <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+          <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+      
+          <!-- Custom and plugin javascript -->
+          <script src="../js/inspinia.js"></script>
+          <!-- <script src="js/plugins/pace/pace.min.js"></script> -->
+
+</body>
+
+
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.9.4/ecommerce_products_grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jun 2022 03:36:24 GMT -->
+
+</html>

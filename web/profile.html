@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <title>247Parttimejobs - Find realiable second income here.</title>
+
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+        <link href="../css/animate.css" rel="stylesheet">
+        <link href="./css/style.css" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+    
+        <!-- Mainly scripts -->
+        <script src="/js/jquery-3.1.1.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+        <!-- 1. Add the following script to your page. -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+        <script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+        <script src="./angular/angular-storage.min.js"></script>
+        <script src="./angular/angular-payments.js"></script>
+        <script src="./js/plugins/ng-file-upload/ng-file-upload-shim.js"></script> <!-- for no html5 browsers support -->
+        <script src="./js/plugins/ng-file-upload/ng-file-upload.js"></script>
+    
+        <script src="./angular/app.js"></script>
+        <script src="./angular/service.js"></script>
+        <script src="./angular/profile.js"></script>
+
+
+    
+    </head>
+
+<body ng-app="website" ng-controller="profile-ctrl" ng-init="init()">
+
+    <div id="wrapper">
+        <div id="page-wrapper"  >
+            <div class="header">
+                <div class="row">
+                    <div class="col-lg-12" style="background-color: #d7d7d7;height:25px;">
+
+                    </div>
+                </div>
+            </div>
+
+            <section>
+                <div >
+                    <div class="row border-bottom">
+                        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                            <div class="navbar-header">
+                                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
+                                        class="fa fa-bars"></i> </a>
+                                    
+                            </div>
+                            
+        
+                         
+                                <ul class="nav navbar-top-links navbar-right p-3">
+
+                                    <span style="color:white;padding-right:20px;font-weight:600;"><a href="index.html" style="color:white;">Home</a> 
+                                        </span>
+
+                                        <div ng-if="usertype == 1">
+                                            <span style="color:white;padding-right:20px;font-weight:600;"><a href="my-jobs.html" style="color:white;">My Jobs</a></span>
+                                            <span style="color:white;padding-right:20px;font-weight:600;"><a href="my-candidates.html" style="color:white;">My Candidates</a></span>
+                                            
+                                        </div>
+                                        <div ng-if="usertype == 2">
+                                            <span style="color:white;padding-right:20px;font-weight:600;"><a href="my-applications.html" style="color:white;">My Applications</a></span>
+                                            <span style="color:white;padding-right:20px;font-weight:600;"><a href="my-tasks.html" style="color:white;">My Tasks</a></span>
+                                            
+                                        </div>
+
+
+                                        <div class="dropdown profile-element">
+                                            
+                                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                              
+                                                <span style="color:white;"> Hello {{ personaldata.name}}<b class="caret"></b></span>
+                                            </a>
+                                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                                <li><a class="dropdown-item" ng-click="logout()">Logout</a></li>
+                                            </ul>
+                                        </div>
+                                </ul>
+                                
+                           
+
+
+                        </nav>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <div class="container">
+                        <div class="row" >
+                            <div class="col-lg-4" >
+                                    <h1> 24x7 Parttimejobs</h1>
+                            </div>
+                            <div class="col-lg-9 center " >
+
+                            </div>
+                            <div class="col-lg-3" >
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+             </section>
+
+
+
+        <!-- Category Section -->
+      
+        
+
+        <section>
+            <div class="container">
+            <div class="wrapper wrapper-content">
+                <div class="row">
+                    <div class="col-lg-2" >
+
+
+                    </div>
+                    <div class="col-lg-12" >
+
+
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ibox" >
+                                        <div class="ibox-title ibox-style2">
+                                         
+                                           <h3 class="center">Profile Information</h3>
+
+                                        </div>
+                                        <div class="ibox-content" >
+
+                                            <div class="row ">
+
+                                                <div class="col-6 ">
+                                                    <label class="form-label ">Name </label>
+                                                    <input type="text " class="form-control " ng-model="data.name" placeholder="Your Name ">
+                                                </div>
+
+                                                <div class="col-6 ">
+                                                    <label class="form-label ">Phone Number  </label>
+                                                    <input type="text " class="form-control " ng-model="data.phone" placeholder="Phone Number ">
+                                                </div>
+                                                 <div class="col-6 ">
+                                                    <label class="form-label ">Email </label>
+                                                    <input type="text " class="form-control " ng-model="data.email" placeholder="Email Address ">
+                                                </div>
+
+                                                <div class="col-6 ">
+                                                    <label class="form-label ">Password   </label>
+                                                    <input type="text " class="form-control " ng-model="data.password" placeholder="Password ">
+                                                </div>
+
+                                                <div class="col-12 ">
+                                                    <label class="form-label "> Intro  </label>
+                                                   
+                                                    <textarea  name="info" class="form-control"  tabindex="5"  ng-model="data.intro"
+                                                    value="data.jobdescription"  rows="4" cols="50">
+                                      
+                                                   </textarea>
+                                                </div>
+                                             
+
+                                                <div class="col-12 ">
+                                                    <label class="form-label ">Address 1  </label>
+                                                    <input type="text " class="form-control " ng-model="data.address1" placeholder="Special Notes">
+                                                </div>
+                                                <div class="col-12 ">
+                                                    <label class="form-label ">Address 2  </label>
+                                                    <input type="text " class="form-control " ng-model="data.address2" placeholder="Special Notes">
+                                                </div>
+                                                <div class="col-3 ">
+                                                    <label class="form-label ">Country </label>
+                                                    <input type="text " class="form-control " ng-model="data.country" placeholder="Special Notes">
+                                                </div>
+                                                <div class="col-3 ">
+                                                    <label class="form-label ">Postal Code  </label>
+                                                    <input type="text " class="form-control " ng-model="data.postalcode" placeholder="Special Notes">
+                                                </div>
+
+
+
+
+                                                <div class="col-12 ">
+                                                    <label class="form-label ">Special Notes  </label>
+                                                    <textarea  name="info" class="form-control"  tabindex="5"  ng-model="data.specialnotes"
+                                                    value="data.jobdescription"  rows="4" cols="50">
+                                      
+                                                   </textarea>
+                                                </div>
+
+
+                                                 
+
+
+
+
+                            <div class="col-6 ">
+                                <p>
+
+                                </p>
+                                <button type="submit" ng-click="customersignup(data)"
+                                class="btn btn-primary block full-width m-b">Submit</button>
+
+                            </div>
+
+
+                        </div>
+                                          
+                                              
+                                            
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ibox" >
+                                        <div class="ibox-title ibox-style2">
+                                         
+                                            <h3 class="center">Profile Image</h3>
+
+                                        </div>
+                                        <div class="ibox-content" >
+                                            <div class="row ">
+
+                                                <form name="myForm" enctype="multipart/form-data">
+                                                    <fieldset>
+                                                    
+                                                      <input type="file" ngf-select ng-model="picFile" name="file"    
+                                                             accept="image/*" ngf-max-size="2MB" required
+                                                             ngf-model-invalid="errorFile">
+                                                      <i ng-show="myForm.file.$error.required">*required</i><br>
+                                                      <i ng-show="myForm.file.$error.maxSize">File too large 
+                                                          {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+                                                      <img height="200px" ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+                                                      <br>
+                                                      <button 
+                                                              ng-click="uploadPic(data.id,picFile)">Submit</button>
+                                                      
+                                                      <span ng-show="picFile.result">Upload Successful</span>
+                                                      <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+                                                    </fieldset>
+                                                    <br>
+                                                  </form>
+
+                                            </div>
+
+                                            <div class="row ">
+                                                <img src="{{data.profile_url}}" width="200"  >
+
+
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                       
+
+    
+
+                        </div>
+                    </div>
+
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+            </div>
+        </section>
+        </div>
+
+    </div>
+    <div class="footer.fixed" style="background-color: #D0D0D0;height: 23px;">
+
+    </div>
+
+       
+
+    
+   
+
+
+    <script src="../js/plugins/pace/pace.min.js"></script>
+    <div id="pagecounter"></div>
+
+
+<!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="apply" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+                    <h4 class="modal-title">247 Partimejobs</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h3> Apply Now</h3>
+                        <p> Job Title - No of Hours</p>
+                        <div class="row ">
+
+                            <div class="col-6 ">
+                                <label class="form-label ">Name </label>
+                                <input type="text " class="form-control " ng-model="data.name" placeholder="Your Name ">
+                            </div>
+
+                            <div class="col-6 ">
+                                <label class="form-label ">Price/Hr  </label>
+                                <input type="text " class="form-control " ng-model="data.hourlyprice" placeholder="Your Name ">
+                            </div>
+
+                            <div class="col-12 ">
+                                <label class="form-label ">Intro  </label>
+                                <input type="text " class="form-control " ng-model="data.source" placeholder="Your Name ">
+                            </div>
+
+                            <div class="col-12 ">
+                                <label class="form-label ">Notes  </label>
+                                <input type="text " class="form-control " ng-model="data.alpaca" placeholder="Your Name ">
+                            </div>
+                            <div class="col-12 ">
+                                 <br>
+                                <label class="form-label ">Confirm Timing  </label>
+                            </div>
+
+                            <div class="col-6 ">
+
+                                <label class="form-label ">Datetime  </label>
+                                <input type="date" class="form-control " ng-model="data.endtime" placeholder="Your currency ">
+                            </div>
+
+                            <div class="col-6 ">
+
+                                <label class="form-label ">No of Hours.  </label>
+                                <input type="date" class="form-control " ng-model="data.endtime" placeholder="Your currency ">
+                            </div>
+
+
+
+                                                     <div class="col-md-1" >
+                                                           <div class="form-group" style="padding-top:10px;">
+
+                                                             <input type="checkbox"  name="password1"  ng-model="data.useragreement" tabindex="5" required>
+                                                               <span class="error pl-1" ng-show="!registerForm.useragreement.$valid && (registerForm.useragreement.$touched)"></span>
+                                                             <div class="help-block with-errors"></div>
+                                                           </div>
+                                                     </div>
+                                                    <div class="col-md-11">
+
+                                                             <label class="form-label p-1 mt-1" for="form3Example3">You agree to be present for the job. A no-attendance fee would
+                                                                 be deducted from your balance if you do not arrive.
+                                                                  <strong><a href="user_agreement.html" target="_blank" >User Agreement.</a></strong></label>
+
+                                                     </div>
+
+
+
+
+                            <div class="col-6 ">
+                                <p>
+
+                                </p>
+                                <button type="submit" ng-click="onsubmit(data)"
+                                class="btn btn-primary block full-width m-b">Submit</button>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+
+
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.9.4/ecommerce_products_grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jun 2022 03:36:24 GMT -->
+
+</html>

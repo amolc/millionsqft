@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <title>247Parttimejobs - Find realiable second income here.</title>
+
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+        <link href="../css/animate.css" rel="stylesheet">
+        <link href="./css/style.css" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+    
+        <!-- Mainly scripts -->
+        <script src="/js/jquery-3.1.1.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+        <!-- 1. Add the following script to your page. -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+        <script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+        <script src="./angular/angular-storage.min.js"></script>
+        <script src="./angular/angular-payments.js"></script>
+      <script src="./js/plugins/ng-file-upload/ng-file-upload-shim.js"></script> <!-- for no html5 browsers support -->
+        <script src="./js/plugins/ng-file-upload/ng-file-upload.js"></script>
+        <script src="./angular/app.js"></script>
+        <script src="./angular/service.js"></script>
+        <script src="./angular/my-jobs-detail.js"></script>
+
+    
+    </head>
+
+<body ng-app="website" ng-controller="my-jobs-detail-ctrl" ng-init="init()">
+
+    <div id="wrapper">
+        <div id="page-wrapper"  >
+            <div class="header">
+                <div class="row">
+                    <div class="col-lg-12" style="background-color: #d7d7d7;height:25px;">
+
+                    </div>
+                </div>
+            </div>
+
+            <section>
+                <div >
+                    <div class="row border-bottom">
+                        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                            <div class="navbar-header">
+                                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
+                                        class="fa fa-bars"></i> </a>
+                                    
+                            </div>
+                            
+        
+                            <ul class="nav navbar-top-links navbar-right p-3">
+                                <span style="color:white;padding-right:20px;font-weight:600;"><a href="index.html" style="color:white;">Home</a> 
+                                </span>
+                               
+                                <div ng-show="usertype == 1">
+                                 <span  style="color:white;padding-right:20px;font-weight:600;"><a href="my-jobs.html" style="color:white;">My Jobs</a></span>
+                            
+                            
+                                <span  ng-if="usertype == 1 " style="color:white;padding-right:20px;font-weight:600;"><a href="my-candidates.html" style="color:white;">My Candidates</a></span>
+                                </div>
+                            
+                                <div class="dropdown profile-element">
+                                    
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                      
+                                        <span style="color:white;"> Hello {{ personaldata.name}}<b class="caret"></b></span>
+                                    </a>
+                                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                        <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                        <li><a class="dropdown-item" ng-click="logout()">Logout</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <div class="container">
+                        <div class="row" >
+                            <div class="col-lg-4" >
+                                    <h1> 24x7 Parttimejobs</h1>
+                            </div>
+                            <div class="col-lg-9 center " >
+
+                            </div>
+                            <div class="col-lg-3" >
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+             </section>
+
+
+
+        <!-- Category Section -->
+      
+        
+
+        <section>
+            <div class="container">
+                <div class="row wrapper border-bottom white-bg page-heading">
+                    <div class="col-lg-7">
+                        <h3>{{personaldata.name}}</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index-2.html">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                <strong>My Jobs</strong>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-lg-4">
+                        <h2></h2>
+                        <ol class="breadcrumb">
+                           
+                        </ol>
+                    </div>
+                </div>
+            <div class="wrapper wrapper-content">
+                <div class="row">
+                   
+                    <div class="col-lg-12"   >
+                            <h2>Job ID : {{data.id}}</h2>
+                            <div class="ibox"  >
+                                <div class="ibox-title ibox-style2"  style="background-color: #d6d6d6;">
+
+                                   <h3 class="center">{{data.jobtitle}}</h3>
+
+                                  
+                                   <div class="ibox-tools">
+                                        <span style="font-size:1.2rem"><strong>{{data.jobhourlypay}}/hr</strong></span>
+                            
+                            
+                            
+                                   </div>
+
+                                </div>
+                                <div class="ibox-content" >
+
+                                    <div class="row ">
+                                        <div class="col-9">
+                                            <label class="form-label "><strong>Job Description</strong></label><br>
+                                            <label class="form-label ">{{ data.jobdescription}}</label>
+                                           
+                                        </div>
+                                          <div class="col-3 ">
+                                           
+                                          </div>
+                                      
+
+                                        <div class="col-9 ">
+                                            <label class="form-label "><strong>Job Date</label><br>
+                                            <label class="form-label ">{{ data.jobdate | date: 'medium'}} / No of hours. {{ data.jobnoofhours}} </stong></label>
+                                            
+                                           
+                                        </div>
+                                        <div class="col-3 ">
+                                           
+                                            <label class="form-label "><strong>Status</label>
+                                           
+                                        </div>
+
+                                        <div class="col-6 ">
+                                          
+                                      
+                                        </div>
+
+
+                                </div>
+
+
+
+                                </div>
+                            </div>
+
+                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12" >
+                        
+                            <div class="ibox" >
+                                <div class="ibox-title ibox-style2">
+
+                                   <h3 class="center">Job Applications</h3>
+
+                                </div>
+                            
+
+                                
+                               
+                                    <div class="ibox-content" ng-repeat="candidate in dataset"  >
+
+
+                                        <div class="row" ng-class="{'bglightgreen' : candidate.confirmcandidate === 1}" >
+
+
+                                            <div class="col-8">
+                                                <label class="form-label "><strong>Name</strong>  </label>
+                                                <br>
+                                                <span>{{candidate.name}} {{candidate.confirmcandidate}}</span>
+                                            </div>
+                                            <div class="col-2 ">
+                                                <label class="form-label "><strong>Hourly Pay </strong>  </label>
+                                                <br>
+                                                <span >{{ candidate.jobhourlypay }} </span>
+                                            </div>
+                                            <div class="col-2 ">
+                                                <label class="form-label "> </label><br>
+                                                <div ng-if="candidate.confirmcandidate !== 1">
+                                                <button type="submit" ng-click="selectcandidate(candidate)" id="login-btn"
+                                                class="btn btn-primary btn-flat m-b-30 m-t-35 mt-3" style="background-color:#ff5c35; color:#FFF">Select</button>
+                                                </div>
+                                                <div ng-if="candidate.confirmcandidate == 1">
+                                                        <img src="/images/selected.png" width="120px" height="120px" >
+
+                                                    </div>
+
+                                          
+                                              </div>
+
+                                            <div class="col-6 ">
+                                                <label class="form-label ">Brief Introduction </label></br>
+                                            <span >{{ candidate.jobintro }}</span>
+                                            </div>
+
+                                        </div>
+                                
+                                    </div>
+                                
+
+                            </div>
+                           
+
+
+                            
+
+                        
+                    </div>
+
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+            </div>
+        </section>
+        </div>
+
+    </div>
+    <div class="footer.fixed" style="background-color: #D0D0D0;height: 23px;">
+
+    </div>
+
+       
+
+
+   
+
+
+    <script src="../js/plugins/pace/pace.min.js"></script>
+    <div id="pagecounter"></div>
+
+<!-- modal starts-->
+<div class="modal inmodal" id="selectcandidate" tabindex="-1" role="dialog" aria-hidden="true" >
+    <div class="modal-dialog">
+        <div class="modal-content animated fadeIn">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span
+                        aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+                <h4 class="modal-title">247 Partimejobs</h4>
+
+            </div>
+            <div class="modal-body">
+               <span>  </span>
+    
+               <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox" >
+                        <div class="ibox-title ibox-style2">
+                         
+                           <h4 class="center"> Confirm Candidate</h4>
+
+                           <div class="ibox-tools">
+                            <span style="font-size:0.7rem"><strong></strong></span>
+                            </div>
+                        </div>
+
+                        <div class="ibox-content" >
+                            <div class="row" style="background-color:#f9fff6"    >
+
+                            
+
+                                    <div class="col-7">
+                                        <label class="form-label "><strong>Job</strong>  </label>
+                                        <br>
+                                        <span>{{ jobdetail.jobtitle}}</span>
+                                    </div>
+                                    <div class="col-4">
+                                      
+                                        <br>
+                                        <span >Date : {{ jobdetail.jobdate | date: "medium" }}</span>
+                                    </div>
+                                    
+                                    
+
+                            </div>
+                        
+                            <div class="row" style="background-color:#f9fff6">
+
+                                    <div class="col-7">
+                                        <label class="form-label "><strong>Name</strong>  </label>
+                                        <br>
+                                        <span>{{candidate.name}}</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label "><strong>Hourly Pay </strong>  </label>
+                                        <br>
+                                        <span > S$ {{ candidate.jobhourlypay }}/hr </span>
+                                    </div>
+                                    <div class="col-2 ">
+                                        <label class="form-label "> </label><br>
+                                        
+                                    </div>
+
+                                    <div class="col-3" style="padding-top:10px;">
+                                        <button type="submit" ng-click="confirmcandidate(candidate.id)"
+                                        class="btn btn-primary block  m-b">Confirn</button>
+                                      
+                                    </div>
+
+                                    <div class="col-3" style="padding-top:10px;">   
+                                        <button type="submit" ng-click="login(loginform)"
+                                        class="btn btn-primary block  m-b">Cancel</button>
+                        
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</body>
+
+
+
+
+</html>

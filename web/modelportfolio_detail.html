@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.9.4/ecommerce_products_grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jun 2022 03:36:24 GMT -->
+
+<head>
+
+    <title>247Parttimejobs - Find realiable second income here.</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="../stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b978cbdbfe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <!-- 1. Add the following script to your page. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+    <script src="../angular/angular-storage.min.js"></script>
+    <script src="../angular/angular-payments.js"></script>
+    <script src="./angular/app.js"></script>
+    <script src="./angular/service.js"></script>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b978cbdbfe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <script src="../angular/modelportfolio_detail.js"></script>
+
+</head>
+
+<body ng-app="website" ng-controller="portfoliodetailctrl" ng-init="init()">
+
+    <div id="wrapper">
+
+        <div id="menu"></div>
+
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
+                                class="fa fa-bars"></i> </a>
+
+                    </div>
+
+                    <ul class="nav navbar-top-links navbar-right p-3">
+                        <div class="dropdown profile-element">
+
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+                                <span class="text-muted text-xs block">{{name}} <b class="caret"></b></span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                <li><a class="dropdown-item" ng-click="logout()">Logout</a></li>
+                            </ul>
+                        </div>
+                </nav>
+            </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>PORTFOLIO</h2>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index-2.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <strong>Portfolio</strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            
+                <div class="wrapper wrapper-content animated fadeInRight">
+                    <div class="row">
+                        <div class="col-lg-12">
+                        <div class="ibox ">
+                            <div class="ibox-title">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                      
+                                        </div>
+
+                                    <div class="col-lg-3">
+                                    
+                                        </div>
+
+                                    <div class="col-lg-3">
+                                        <span class="right"><a href="#" ng-click="onedit()" class="header">Edit</a></span><br>
+                                    
+                                        </div>
+                                    
+                                    </div>
+
+                                <div class="row">
+                                                               
+                                    <div class="col-lg-3">
+                                      
+                                        <h3>{{ portfolioDetails['portfolio_name'] }} </h3>
+                                        <br>
+                    
+
+                                        <span>{{ portfolioDetails['info'] }} </span><br>
+                                        <span>{{ portfolioDetails['briefintro'] }} </span><br>
+                                        
+                                        <h5><b>Capital  {{ portfolioDetails['capital'] }} </b>  </h5><br>
+                                    
+                                        <h5>Contributors: {{ portfolioDetails['contributors'] }} </h5>
+
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <h5>Start Date   {{ portfolioDetails['portfolio_startDate']  | date : medium}}   </h5><br>
+                                        <h5>Stockdata Source ID   {{ portfolioDetails['stockdataId'] }}   </h5><br>
+                                      
+
+
+                                     
+                                    </div>
+   
+                                    <div class="col-lg-4"> <h5></h5></div>
+                                    
+                                    
+        
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="ibox ">
+                                <div class="ibox-title">
+                                    <div class="row">
+                                         <div class="col-lg-8"> <h5><button type="button" class="btn btn-w-m btn-primary" data-toggle="modal" 
+                                             ng-click="addstock_modal(portfolioDetails['stockdataId'] , portfolioDetails['id'],portfolioDetails['portfolio_name'], portfolioDetails['capital'])" >
+                                             Add Stock</button></h5></div>
+    
+                                       
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="ibox-content">
+    
+                                    <div class="table-responsive mt-3">
+                                        <table class="table table-striped table-bordered table-hover dataTables-example">
+                                            <thead>
+                                                <tr>
+                                                    <th>Sr. Number</th>
+                                                    <th>Stock </th>
+                                                    <th>Source </th>
+
+                                                    <th>Allocated Percentage(s)</th>
+                                                    <th>Allocated QTY</th>
+                                                  
+                                                    <th>Start Price</th>
+                                                    <th>Present Price</th>
+                                                    <th>Allocated Value</th>
+                                                    <th>Present Value</th>
+                                                   
+                                                    <th>Profit and Loss</th>
+                                                  
+                                                    <th>Status</th>
+                                                
+                                                    <th>Edit</th>
+                                                    <th>Delete</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="data in portfoliostocks">
+                                                    <td>{{data.id}}</td>
+                                                    <td><a href="chart.html?stock={{data.stock}}">{{data.stock}}</a></td>
+                                                    <td>{{data.source}}</td>
+                                                    <td>{{data.percentage}}</td>
+                                                    <td>{{data.allocatedqty}}</td>
+                                                    
+                                                    <td>{{data.startprice}}</td>
+                                                    <td>{{data.presentprice}}</td>
+                                                    <td>{{data.allocatedvalue}}</td>
+                                                    <td>{{data.presentvalue}}</td>
+                                                    <td>{{data.profitloss}}</td>
+                                                    <td>{{data.status}}</td>
+                                                 
+                                                    <td class="center"><a href="#" data-toggle="modal" ng-click="editstockmodal(data,portfolioDetails['capital'])">Edit</a></td>
+                                                    <td class="center"><a href="#" data-toggle="modal" ng-click="deletestockmodal( data.id)">Delete</a></td>
+    
+    
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    
+
+                    
+                </div>
+
+
+            
+
+                
+
+           
+        </div>
+
+
+
+
+    </div>
+    </div>
+    <!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="addstock" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="img/iamstockbot.png" class="ml-3">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h3> Add Stock</h3>
+                        <p> Please select the stock for your portfolio.</p>
+                        <form name="myForm">
+                            <div class="form-group">
+                                <label for="stockname">Stock Name:</label>
+
+                                <select class="custom-select" ng-model="addstock.stock" required name="stockname">
+                                    <option value="" disabled></option>
+                                    <option ng-repeat="stock in stockdata_list" value="{{stock.stock}}">
+                                        {{stock.stock}}</option>
+
+                                </select>
+
+
+                            </div>
+                            <div class="form-group">
+                                <label for="stockname">Stock Source:</label>
+
+                                <select class="custom-select" ng-model="addstock.source" required name="stockname">
+                                    <option value="" disabled></option>
+                                    <option ng-repeat="stock in stockdata_list" value="{{stock.source}}">
+                                        {{stock.source}}</option>
+
+                                </select>
+
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="stockpercentage">Percentage Allocation:</label>
+                                <input type="number" min="0" max="100" class="form-control"
+                                    ng-model="addstock.percentage" name="percentage" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="stockpercentage">Status:</label>
+                                <input type="text" min="0" max="100" class="form-control"
+                                    ng-model="addstock.status" name="status" required>
+                            </div>
+                            <button type="submit" ng-click="onaddstockSubmit(addstock)"
+                                class="btn btn-primary block full-width m-b">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="editform" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="img/iamstockbot.png" class="ml-3">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h3> Add Model Category</h3>
+                        <p> Model Categories.</p>
+                        <form name="myForm">
+
+                            <div class="form-group">
+
+                                <label for="stockname">Organization Id:</label>
+
+                                <input type="text" min="0" max="100" class="form-control"
+                                ng-model="data.org_id" name="percentage" value="data.org_id" required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                
+                                <label for="stockname">portfolio_name:</label>
+
+                                <input type="text" min="0" max="100" class="form-control"
+                                ng-model="data.portfolio_name" name="percentage" value="data.portfolio_name" required>
+
+                            </div>
+                            <div class="col-6 form-group">
+                                <label class="form-label ">StockdataId </label>
+                                <input type="text" class="form-control " ng-model="data.stockdataId" placeholder="stockdataId ">
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="stockname">Capital:</label>
+
+                                <input type="text" min="0" max="100" class="form-control"
+                                ng-model="data.capital" name="percentage" value="data.capital" required>
+
+                            </div>
+     
+                            <div class="form-group">
+
+                                <label for="stockname">telegramchannel:</label>
+
+                                <input type="text" min="0" max="100" class="form-control"
+                                ng-model="data.telegramchannel" name="percentage" value="data.telegramchannel" required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="stockname">chat_id :</label>
+
+                                <input type="text" min="0" max="100" class="form-control"
+                                ng-model="data.chat_id" name="percentage" value="data.chat_id" required>
+
+                            </div>
+                           
+                            <div class="form-group">
+                                <label for="stockname">info :</label>
+
+                               
+                                <textarea  name="info" value="data.info" ng-model="data.info" rows="4" cols="50">
+                                    At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+                                </textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="stockname">briefintro :</label>
+
+                                <textarea  name="info"  ng-model="data.briefintro" value="data.briefintro" value="data.info" ng-model="data.info" rows="4" cols="50">
+                                    At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+                                </textarea>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="stockname">contributors :</label>
+
+                                <input type="text" min="0" max="100" class="form-control"
+                                ng-model="data.contributors" name="percentage" value="data.contributors" required>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="stockname">status:</label>
+
+                                <input type="text" min="0" max="100" class="form-control"
+                                ng-model="data.status" name="percentage" value="data.status" required>
+
+                            </div>
+
+                            <div class="col-6 ">
+                                <label class="form-label ">Start Date </label>
+                                <input type="text" class="form-control " date-field   ng-model="data.portfolio_startDate" placeholder="Start Date" >
+                            </div>
+                            
+                
+                            <button type="submit" ng-click="onsubmit(data)"
+                                class="btn btn-primary block full-width m-b">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for the reset portfolio -->
+   
+
+    <!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="editstock" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="img/iamstockbot_a.png" style="width:120px; height:80px;">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h3> Edit Stock</h3>
+                        <p> You may edit the percentage setting for your stock. </p>
+                        
+                        <form name="myForm">
+                            <div class="form-group">
+                                <label for="stockname">Stock Name:</label>
+
+                                <input type="text" class="form-control" ng-model="data.stock" name="stockname"
+                                    value="{{data.stock}} " readonly>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="stockname">Stock Source:</label>
+
+                                <input type="text" class="form-control" ng-model="data.source" name="stockname"
+                                    value="{{data.source}} " >
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="stockpercentage">Percentage Allocation:</label>
+                                <input type="text" class="form-control" ng-model="data.percentage" name="percentage"
+                                    value="{{data.percentage }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stockpercentage">Status:</label>
+                                <input type="text" class="form-control" ng-model="data.status" name="percentage"
+                                    value="{{data.status }}" >
+
+                            </div>
+                            <button type="submit" ng-click="editstock(data)"
+                                class="btn btn-primary block full-width m-b">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal starts-->
+    <div class="modal inmodal" id="editmysignalportfolio" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="img/iamstockbot_a.png" style="width:120px; height:80px;">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h3>mysignalportfolio Edit</h3>
+                        <p> You may edit the portfolio details. </p>
+                        <form name="myForm">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="stockname">Portfolio Name:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" ng-model="data.portfolio_name" name="portfolioName"
+                                    value="{{data.portfolioName}} " >
+                                    </div>
+
+                                </div>
+                           
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="stockname">Portfolio Capital:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" ng-model="data.portfolio_capital" name="capital"
+                                        value="{{data.capital}} " >
+                                    </div>
+
+                                </div>
+ 
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="stockname">Portfolio Status:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" ng-model="data.portfolio_status" name="capital"
+                                        value="{{data.capital}} " >
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="stockname">Portfolio Broker:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" ng-model="data.portfolio_broker" name="capital"
+                                        value="{{data.capital}} " >
+
+                                        
+                                    </div>
+
+                                </div>
+                            </div>
+                           
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="stockname">Portfolio Telegram Alerts:</label>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" ng-model="data.portfolio_signal" name="capital"
+                                        value="{{data.capital}} " >
+    
+                                    </div>
+
+                                </div>
+                            </div>
+                           
+                      
+                           
+                           
+                            
+                           
+                            <button type="submit" ng-click="submitmysignalportfolio(data)"
+                                class="btn btn-primary block full-width m-b">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="deletestock" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="Iamstockbot-Logo.png" style="width:120px; height:80px;">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h3> Confirm Stock Delete</h3>
+                        
+                        {{data.modelportfolio_id}}
+                        <form name="myForm">
+                            
+                        
+                            <button type="submit" ng-click="deletestock(data)"
+                                class="btn btn-primary btn-w-m block full-width m-b">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="alert" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="img/iamstockbot.png" style="width:120px; height:80px;">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h3> Alert</h3>
+                        <p>Please reset your existing portfolio before creating a new one. </p>
+
+                    </div>
+                    <form name="myForm">
+
+                        <button type="button" class="btn btn-primary block btn-w-m" data-dismiss="modal">Close</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="success" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="img/iamstockbot.png" style="width:120px; ">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h5>{{msg}}</h5>
+
+                    </div>
+                   
+
+                        <button type="button" class="btn btn-primary block btn-w-m" data-dismiss="modal" ng-click="mysignalportfolio()">Close</button>
+                   
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="issue" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="img/iamstockbot.png" style="width:120px; height:80px;">
+                    <h4 class="modal-title">Iamstockbot</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--modal form section starts-->
+                    <div class="form">
+                        <h3> Alert</h3>
+                        <p>{{error-msg}} </p>
+
+                    </div>
+                    <form name="myForm">
+
+                        <button type="button" class="btn btn-primary block btn-w-m" data-dismiss="modal">Close</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+        <!-- Mainly scripts -->
+        <script src="/js/jquery-3.1.1.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    
+        <!-- Custom and plugin javascript -->
+        <script src="../js/inspinia.js"></script>
+        <!-- <script src="js/plugins/pace/pace.min.js"></script> -->
+
+</body>
+
+
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.9.4/ecommerce_products_grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jun 2022 03:36:24 GMT -->
+
+</html>
