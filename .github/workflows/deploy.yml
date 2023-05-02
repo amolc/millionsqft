@@ -1,0 +1,26 @@
+name: deploy royalmanpower- main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy on smartportfolios server
+        uses: appleboy/ssh-action@master
+        with:
+          host: "royalmanpower.co"
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          sync: true
+          script: |        
+            cd /home/${{ secrets.SSH_USER }}/repos/royalmanpower
+            git fetch origin main
+            git reset --hard FETCH_HEAD
+            git clean -d -f --exclude secrets
+            git pull
+            ./scripts/deployfrontend.sh royalmanpower

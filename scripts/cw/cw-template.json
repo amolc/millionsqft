@@ -1,0 +1,75 @@
+{
+    "agent": {
+        "metrics_collection_interval": 60,
+        "logfile": "/opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log"
+    },
+    "metrics": {
+        "namespace": "config_name",
+        "metrics_collected": {
+            "procstat": [
+                {
+                    "pattern": "celery -A",
+                    "measurement": [
+                        "pid_count"
+                    ],
+                    "metrics_collection_interval": 60
+                }
+            ],
+            "mem": {
+                "measurement": [
+                    "used_percent"
+                ],
+                "metrics_collection_interval": 60
+            }
+        },
+        "append_dimensions": {
+            "InstanceId": "${aws:InstanceId}"
+        },
+        "force_flush_interval": 60
+    },
+    "logs": {
+        "logs_collected": {
+            "files": {
+                "collect_list": [
+                    {
+                        "file_path": "/var/log/nginx/error.log**",
+                        "log_group_name": "config_name/var/log/nginx/error.log",
+                        "timezone": "Local"
+                    },
+                    {
+                        "file_path": "/var/www/finance/restserver/logs/django_supervisor.err**",
+                        "log_group_name": "config_name/var/www/finance/restserver/logs/django_supervisor.err",
+                        "timezone": "Local"
+                    },
+                    {
+                        "file_path": "/var/www/finance/restserver/logs/api_celery.err**",
+                        "log_group_name": "config_name/var/www/finance/restserver/logs/api_celery.err",
+                        "timezone": "Local"
+                    },
+                    {
+                        "file_path": "/var/www/finance/restserver/logs/api_celery.log**",
+                        "log_group_name": "config_name/var/www/finance/restserver/logs/api_celery.log",
+                        "timezone": "Local"
+                    },
+                    {
+                        "file_path": "/var/www/finance/restserver/logs/api_celery_beat.err**",
+                        "log_group_name": "config_name/var/www/finance/restserver/logs/api_celery_beat.err",
+                        "timezone": "Local"
+                    },
+                    {
+                        "file_path": "/var/www/finance/restserver/logs/api_celery_beat.log**",
+                        "log_group_name": "config_name/var/www/finance/restserver/logs/api_celery_beat.log",
+                        "timezone": "Local"
+                    },
+                    {
+                        "file_path": "/var/www/finance/restserver/logs/gunicorn_9001_errors.txt**",
+                        "log_group_name": "config_name/var/www/finance/restserver/logs/gunicorn_9001_errors.txt",
+                        "timezone": "Local"
+                    }
+                ]
+            }
+        },
+        "force_flush_interval": 60
+    }
+}
+
