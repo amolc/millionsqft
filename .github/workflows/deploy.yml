@@ -13,8 +13,8 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: "millionsqft.co"
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_PASSWORD }}
+          username: ubuntu
+          password: 10gXWOqeaf!
           port: 22
           sync: true
           script: |        
