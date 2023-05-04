@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <title>247Parttimejobs - Find realiable second income here.</title>
+
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+        <link href="../css/animate.css" rel="stylesheet">
+        <link href="./css/style.css" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+    
+        <!-- Mainly scripts -->
+        <script src="/js/jquery-3.1.1.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+        <!-- 1. Add the following script to your page. -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+        <script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+        <script src="./angular/angular-storage.min.js"></script>
+        <script src="./angular/angular-payments.js"></script>
+        <script src="./js/plugins/ng-file-upload/ng-file-upload-shim.js"></script> <!-- for no html5 browsers support -->
+        <script src="./js/plugins/ng-file-upload/ng-file-upload.js"></script>
+        <script src="./angular/app.js"></script>
+        <script src="./angular/service.js"></script>
+        
+        <script src="./angular/index.js"></script>
+        <script src="./angular/candidates.js"></script>
+
+    
+    </head>
+
+<body ng-app="website" ng-controller="index-ctrl" ng-init="init()">
+
+    <div id="wrapper">
+        <div id="page-wrapper"  >
+            <div class="header">
+                <div class="row" style="background-color: #d7d7d7;height:25px;">
+                    
+                    <div class="col-lg-12"style="float:right !important;margin-left: auto; margin-right: 0;width:auto;">
+                            <div style="float:right;" >
+                            <ul class="nav navbar-top-links navbar-right">
+                               
+                                <span style="padding-right:20px;font-weight:600;"><a href="europejobs.html" >Europe Jobs</a> 
+                                </span>
+                                <span style="padding-right:20px;font-weight:600;"><a href="education.html" >International Education</a> 
+                                </span>
+                               
+                             </ul>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <section>
+                <div >
+                   
+                        <div class="row border-bottom">
+                            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                                <div class="navbar-header">
+                                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
+                                            class="fa fa-bars"></i> </a>
+                                        
+                                </div>
+                                
+            
+                                <ul class="nav navbar-top-links navbar-right p-3">
+                                    {{islogin}}
+                                    <div ng-if="islogin == 1">
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="index.html" style="color:white;">Home</a> 
+                                        </span>
+
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="my-jobs.html" style="color:white;">My Jobs</a> 
+                                        </span>
+
+
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="my-candidates.html" style="color:white;">My Candidates</a> 
+                                        </span>
+
+                                    </div>
+                                    
+                                    
+
+                                    
+                                    <div ng-if="islogin == 0">
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="index.html" style="color:white;">Home</a> 
+                                        </span>
+                                        <span style="color:white;padding-right:20px;font-weight:600;"><a href="employers.html" style="color:white;">Employers</a> 
+                                        </span>
+                                      
+                                         <span style="color:white;padding-right:20px;font-weight:600;"><a href="candidates.html" style="color:white;">Candidates</a></span>
+                                    </div>
+                                    <div ng-if="islogin == 1">
+                                        <div class="dropdown profile-element">
+                                            
+                                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                            
+                                                <span style="color:white;"> Hello {{ personaldata.name}}<b class="caret"></b></span>
+                                            </a>
+                                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                                <li><a class="dropdown-item" ng-click="logout()">Logout</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                   
+
+                                   
+                                </ul>
+                                
+                            </nav>
+                        </div>
+
+                        <div class="row" >
+                            <div class="col-lg-4" >
+
+                            </div>
+                            <div class="col-lg-9 center " >
+
+                            </div>
+                            <div class="col-lg-3" >
+                              
+                            </div>
+
+                        </div>
+                    
+                </div>
+                <div  >
+                    
+                        <div class="row" >
+                            <div class="col-lg-4" >
+                                    <h1> 24x7 Parttimejobs</h1>
+                            </div>
+                            <div class="col-lg-9 center " >
+
+                            </div>
+                            <div class="col-lg-3" >
+
+                            </div>
+
+                        </div>
+                    
+                </div>
+             </section>
+
+
+
+        <!-- Category Section -->
+      
+        
+        <section>
+            
+                <div class="header">
+                    <div class="row mt-5 md-5" >
+                        <div class="col-lg-2" >
+
+                        </div>
+                        <div class="col-lg-8" >
+                        <div class="div_top_hypers">
+                         <ul class="ul_top_hypers" >
+                            <li class="space" ><img src="images/bar-counter.png" height="10%" width="10%"></li>
+                            <li class="space" ><img src="images/burger.png" height="10%" width="10%"></li>
+                            <li class="space" ><img src="images/cutlery.png" height="10%" width="10%"></li>
+                            <li class="space" ><img src="images/delivery-man.png" height="10%" width="10%"></li>
+                            <li class="space" ><img src="images/food.png" height="10%" width="10%"></li>
+                          
+                         </ul>
+                        </div>
+
+                        </div>
+                        <div class="col-lg-2" >
+
+                        </div>
+
+                    </div>
+                </div>
+            
+        </section>
+        <section>
+           
+            <div class="wrapper wrapper-content">
+                <div class="row">
+                    <div class="col-lg-2" >
+
+
+                    </div>
+                    <div class="col-lg-12" >
+
+
+                        <div class="row">
+                            <div class="col-lg-4" ng-repeat="data in joblist">
+                                <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ibox" >
+                                        <div class="ibox-title ibox-style2" ng-click="opendetails(data.id)">
+                                         
+                                           <h4 class="center"> <a href="#" > {{ data.jobtitle }}</a></h4>
+                                            <div class="ibox-tools" >
+                                                  <span style="font-size:1.2rem"><a href="#" >  S${{ data.jobhourlypay }}/hr</a></span>
+                                            </div>
+                                        </div>
+                                        <div class="ibox-list-content" >
+                                           
+                                            <div class="row" >
+                                                <div class="col-md-10">
+                                                    
+                                                    
+                                                    <span style="font-weight: bold">Job Description</span><br>
+                                                        {{ data.jobdescription }}
+                                                    <br>
+                                                    <br>
+                                                    <span style="font-weight: bold">Duration/Total Pay</span>
+                                                    <span> {{ data.jobnoofhours }} Hrs. @ {{ data.jobhourlypay }}/hr.</span><br>
+
+                                                    <span style="font-weight: bold">{{ data.companyname }}</span>
+                                                    <br>
+                                                    {{ data.country }} {{ data.postalcode }}
+                                                    <br>
+
+                                                    <br>
+                                                    <span ng-click="opendetails(data.id)" >Details</span>
+                                                    <br>
+                                                        
+                                                    
+                                                </div>
+                                               
+                                                <div class="col-md-2">
+
+                                                    <div >
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate | date: "dd MMM"}} </span>
+                                                        <br>
+                                                        <span style="font-size:1.2rem;font-weight:bold">{{ data.jobdate  | date : "HH a"}} </span>
+                                                    </div>
+                                                    <div >
+                                                        <button type="submit" ng-click="apply(data)" id="login-btn"
+                                                        class="btn btn-primary btn-flat m-b-30 m-t-30 mt-2" style="background-color:#ff5c35; color:#FFF">Apply</button>
+                                                    
+                                                    </div>
+                                                    
+                                                
+                                                   
+                                                  
+                                                </div>
+
+                                            </div>
+                            
+                                          
+                                              
+                                            
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                       
+                       
+                          
+    
+                            
+                        </div>
+                    </div>
+
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+            </div>
+        </section>
+        </div>
+
+    </div>
+    <div class="footer.fixed" style="background-color: #D0D0D0;height: 23px;">
+
+    </div>
+
+       
+
+    
+   
+
+
+    <script src="../js/plugins/pace/pace.min.js"></script>
+    <div id="pagecounter"></div>
+
+
+<!-- Modals for the webpage come here -->
+    <!-- modal starts-->
+    <div class="modal inmodal" id="apply" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+                    <h4 class="modal-title">247 Partimejobs</h4>
+
+                </div>
+                <div class="modal-body">
+                   
+                    <!--modal form section starts-->
+                    <form name="applicationForm">
+                    <div class="form">
+                        <h3>{{ data.id }}-{{data.jobtitle}}</h3>
+                     
+                        <span> <strong>Apply Now</strong></span>
+                        <div class="row ">
+
+                            <div class="col-6 ">
+                                <label class="form-label ">Name </label>
+                                <input type="text " tabindex="1"  class="form-control " ng-model="application.name" value="">
+                            </div>
+
+                            <div class="col-6 ">
+                                <label class="form-label ">Price/Hr  </label>
+                                <input type="text "  tabindex="2" class="form-control " ng-model="application.jobhourlypay"   value=""  >
+                            </div>
+
+                            <div class="col-12 ">
+                                <label class="form-label ">Introduction /Cover Letter </label>
+                              
+                                <textarea  name="info" class="form-control"  tabindex="3"  ng-model="application.intro" 
+                                        value="data.jobdescription"  rows="4" cols="50">
+                                       
+                                </textarea>
+
+                                <span class="error" ng-show="validateintro==1">{{ message }}</span>
+                          
+                            </div>
+
+                          
+                           
+                            <div class="col-12 ">
+                                 <br>
+                                <label class="form-label "><strong>Confirm Timing </strong> </label>
+                            </div>
+
+                            <div class="col-6 ">
+                                <label class="form-label ">Datetime  </label>
+                                <input type="text" class="form-control " value="{{ data.jobdate | date: 'dd MMM HH a'}}" readonly>
+                            </div>
+
+                            <div class="col-6 ">
+
+                                <label class="form-label ">No of Hours.  </label>
+                                <input type="text" class="form-control "  value="{{ data.jobnoofhours}}" readonly>
+                            </div>
+
+                            <div class="col-md-1" >
+                                <div class="form-group" style="padding-top:10px;">
+                                    <input type="checkbox"  name="password1"  ng-model="application.agreeterms" tabindex="4" required>
+                                    <span class="error pl-1" ng-show="!applicationForm.useragreement.$valid && (applicationForm.useragreement.$touched)"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-11">
+
+                                    <label class="form-label p-1 mt-1" for="form3Example3">You agree to be present for the job. A no-attendance fee would
+                                        be deducted from your balance if you do not arrive.
+                                        <strong><a href="user_agreement.html" target="_blank" >User Agreement.</a></strong></label>
+
+                                </div>
+
+
+
+
+                            <div class="col-6 ">
+                                <p>
+
+                                </p>
+                                <button type="submit"  tabindex="5"  ng-click="addapplication(application)"
+                                class="btn btn-primary block full-width m-b">Submit</button>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+     <!-- modal starts-->
+     <div class="modal inmodal" id="iscandidate" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+                    <h4 class="modal-title">247 Partimejobs</h4>
+
+                </div>
+                <div class="modal-body">
+                   <span> Please login as a candidate to proceed with the application.</span>
+                   <button type="submit" ng-click="logout()" id="login-btn"
+                   class="btn btn-primary btn-flat m-b-30 m-t-30 mt-2" style="background-color:#ff5c35; color:#FFF">Logout</button>
+
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- modal starts-->
+    <div class="modal inmodal" id="success" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+                    <h4 class="modal-title">247 Partimejobs</h4>
+
+                </div>
+                <div class="modal-body">
+                   <span> Your Application is successfully submitted. </span>
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+      <!-- modal starts-->
+      <div class="modal inmodal" id="login" tabindex="-1" role="dialog" aria-hidden="true" ng-controller="candidates-ctrl">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+                    <h4 class="modal-title">247 Partimejobs</h4>
+
+                </div>
+                <div class="modal-body">
+                 
+                  
+                   <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox" >
+                            <div class="ibox-title ibox-style2">
+                             
+                               <h4 class="left" >Candidate Login</h4>
+
+                            </div>
+                            <div class="ibox-content" >
+                                <div class="row ">
+
+
+
+                <div class="col-12 ">
+                    <label class="form-label ">Email </label>
+                    <input type="text " class="form-control " ng-model="loginform.email" placeholder="Email ">
+                </div>
+
+                <div class="col-12 ">
+                    <label class="form-label ">Password </label>
+                    <input type="text " class="form-control " ng-model="loginform.password" placeholder="Password ">
+                </div>
+
+
+
+                 <div class="col-md-1" >
+                       <div class="form-group" style="padding-top:10px;">
+
+                         <input type="checkbox"  name="password1"  ng-model="loginform.rememberpassword" tabindex="5" >
+                          
+                         <div class="help-block with-errors"></div>
+                       </div>
+                 </div>
+                <div class="col-md-8">
+
+                         <label class="form-label p-1 mt-1" for="form3Example3">Remember Login/Password.
+                             </label>
+
+                 </div>
+
+
+
+
+                <div class="col-6 "  >
+                    <p>
+
+                    </p>
+                    <button type="submit" ng-click="login(loginform)"
+                    class="btn btn-primary block full-width m-b">Submit</button>
+
+                </div>
+
+
+            </div>
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+
+
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.9.4/ecommerce_products_grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jun 2022 03:36:24 GMT -->
+
+</html>
