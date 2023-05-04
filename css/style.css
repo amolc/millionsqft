@@ -4,13 +4,13 @@
 }
 
 .image-with-text {
-    width: auto;
+    width: 234556px;
     height: auto;
     left: 0px;
     right: 0px;
     margin-bottom: -192px;
 }
-.image-fluid {
+.image-fluid{
     width: 13400;
 }
 
@@ -51,7 +51,7 @@
     line-height: 30px;
 }
 
-.hero {
+.hero  {
     margin-top: 200px;
 }
 
@@ -96,7 +96,7 @@
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
-    
+ 
 }
 
 .my-container {
