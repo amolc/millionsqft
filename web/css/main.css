@@ -808,6 +808,7 @@ th {
     margin-bottom: 20px
 }
 
+
 @media (max-width: 991px) {
     .section-title h2 {
         margin-bottom: 5px;
@@ -1486,7 +1487,7 @@ th {
 }
 
 .about-area {
-    background: #f7f7f7
+    background: #34b34c
 }
 
 @media (max-width: 991px) {
@@ -1753,7 +1754,7 @@ th {
 }
 
 .testimonial-area {
-    background: #f7f7f7
+    background: #f5fefb
 }
 
 .testimonial-area .owl-controls {
@@ -1800,7 +1801,7 @@ th {
 }
 
 .single-testimonial {
-    background-color: #fff;
+    background-color: #000;
     padding: 30px;
     border: 1px solid transparent;
     -webkit-transition: all 0.3s ease 0s;
@@ -4231,3 +4232,14 @@ h6 {
         margin-top: 20px
     }
 }
+
+.card {
+    border-radius: 10px;
+    border-color: 1px solid green;
+    padding: 0.5rem;
+    column-gap: 15px;
+}
+
+.checked {
+    color: orange;
+  }
