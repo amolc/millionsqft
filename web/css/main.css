@@ -4243,3 +4243,17 @@ h6 {
 .checked {
     color: orange;
   }
+
+.collapsed {
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    width: 100%;
+}
+
+.collapsed:hover {
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    
+}
